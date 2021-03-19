@@ -1,0 +1,80 @@
+{
+    "Giulia Bertò":{
+        "type" : "alumni",
+        "ORCID" : "false", 
+        "image" : "https://brainlife.io/images/avatar/giulia3.png",
+        "role":"Data and Application Engineer",
+        "location":"BrainLife",
+        "description" : ""
+    },
+    "Lindsey Kitchell" :{
+        "type" : "alumni",
+        "ORCID" : "true",
+        "id" : "0000-0002-5498-5306",
+        "image" : "https://brainlife.io/images/avatar/lindseykitchell.jpg",
+        "summary" : "Lindsey is a Ph.D. candidate at Indiana University. She implemented many of the early brainlife.io Apps as part of her research projects in the Pestilli Laboratory. Lindsey is passionate about Machine-Learning, shape analysis, and 3D-printing technology."
+    },
+    "Sophia Vinci-Booher":{
+        "type" : "current",
+        "ORCID" : "true",
+        "id" : "0000-0002-3626-146X",
+        "summary": "Postdoctoral Fellow",
+        "image" : "https://brainlife.io/images/avatar/sophia_cropped_750x750.jpg",
+        "externals" : {
+            "twitter" : "https://twitter.com/svincibo",
+            "github" : "https://github.com/svincibo",
+            "scholar" : "https://scholar.google.com/citations?user=xNYnb6wAAAAJ&hl=en"
+         }
+
+    },
+    "Franco Pestilli" : {
+        "type" : "current",
+        "ORCID":"true",
+        "image": "https://brainlife.io/images/avatar/franco.jpg",
+        "id": "0000-0002-2469-0494",
+        "summary": "A small description",
+        "externals" : {
+            "twitter" : "rrr",
+            "facebook" : "htttp",
+            "linkedin" : "rrr",
+            "resume" : "rr" ,
+            "github" : "ddd"      
+         }
+    },
+    "Bradley Caron" : {
+        "type" : "current",
+        "ORCID" : "true",
+        "image" : "https://brainlife.io/images/avatar/brad.jpg",
+        "id":"0000-0002-4486-1203",
+        "externals" : {
+            "twitter" : "https://twitter.com/bacaronIU",
+            "github" : "https://github.com/bacaron",
+            "scholar" : "https://scholar.google.com/citations?user=fU9K6GgAAAAJ&hl=en"
+         }
+        
+    },
+    "Sandra HaneKamp" : {
+        "type" : "current",
+        "ORCID" : "true",
+        "image" : "https://brainlife.io/images/avatar/sandra.jpg",
+        "id":"0000-0002-4486-1203",
+        "externals" : {
+            "twitter" : "https://twitter.com/sandrahanekamp",
+            "github" : "https://github.com/sandrahanekamp",
+            "scholar" : "http://scholar.google.com/citations?user=HpFvfUsAAAAJ&hl=nl"
+         }
+    },
+    "Ricardo Stuck" : {
+        "type" : "current",
+        "ORCID" : "true",
+        "image" : "https://lh3.googleusercontent.com/a-/AOh14GgBwy9LOFYaemp7Vdkug38Gnwz9Ssi4IP9hM0JBpg=s40",
+        "id":"0000-0001-7493-5413",
+        "externals" : {
+            "twitter" : "https://twitter.com/RicardoStuck",
+            "github" : "https://github.com/ricardostuck",
+            "scholar" : "https://scholar.google.com/citations?user=IFIa8vgAAAAJ&hl=en"
+         }
+    }
+    
+
+}

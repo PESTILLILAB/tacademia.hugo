@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teams on Pestilli Lab</title>
+    <link>http://129.114.17.179:8000/plab/team/</link>
+    <description>Recent content in Teams on Pestilli Lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://129.114.17.179:8000/plab/team/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://129.114.17.179:8000/plab/team/s/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://129.114.17.179:8000/plab/team/s/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
