@@ -279,7 +279,7 @@ function generateAlumni(obj){
 function team_generator(){
     console.log("entered");
 
-    fetch('http://129.114.17.179:8000/plab/assets/team.json').then(res=>res.json()).then(insts=>{
+    fetch('http://plab.shipsme.com/assets/team.json').then(res=>res.json()).then(insts=>{
         
         console.log(insts);
         for(let name in insts) {
@@ -386,7 +386,7 @@ function generatePublication(title,date,authors,link,doi,journal) {
     document.getElementById('_publications').innerHTML += content;
 }
 
-axios.get('http://129.114.17.179:8000/plab/assets/pub.xml', { data: null }, axios.defaults.headers)
+axios.get('http://plab.shipsme.com/assets/pub.xml', { data: null }, axios.defaults.headers)
             .then(response => {
                 console.log(response.data)
                 var jsonObj2 = parser.parse(response.data);
@@ -403,7 +403,29 @@ axios.get('http://129.114.17.179:8000/plab/assets/pub.xml', { data: null }, axio
                     var journal = output["dc:source"]
                     generatePublication(title, date,authors,link,doi,journal);
                 }
-              });
+ });
+
+function pub_gen(){
+    axios.get('http://plab.shipsme.com/assets/pub.xml', { data: null }, axios.defaults.headers)
+            .then(response => {
+                console.log(response.data)
+                var jsonObj2 = parser.parse(response.data);
+                console.log(jsonObj2);
+                console.log(jsonObj2.rss.channel.item.length);
+                for(i=0; i <= jsonObj2.rss.channel.item.length;i++){
+                    var output = jsonObj2.rss.channel.item[i];
+                    var title = output.title;
+                    var date = output["dc:date"];
+                    var authors = output["dc:creator"];
+                    // authors.split
+                    var link = output["link"];
+                    var doi = output["dc:identifier"]
+                    var journal = output["dc:source"]
+                    generatePublication(title, date,authors,link,doi,journal);
+                }
+ });
+}
+
 
 function generateAwards(startDate,endDate,pi,copi,title){
     content = '<li class="timeline-item bg-white rounded ml-3 p-4 shadow"> <div class="timeline-arrow"></div><p><span class="orange-text">'+startDate +' to '+ endDate+'</span></p><h2 class="h5">'+title+'</h2><p>'+pi+' ,'+copi+'</p> <p class="journal bold"><br><span><a href='+title+'><span class="badge badge-pill badge-info">'+'</a></span></p></li>';
