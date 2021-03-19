@@ -104,8 +104,31 @@
 
 
       <!-- START THE FEATURETTES -->
+      <hr class="featurette-divider">
+
+     
+    {{ with .Site.GetPage "/home/" }}
+          {{range .Pages}}
+          {{if in .Params.tags "feature"}}
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading margin-paragraph-left">{{.Params.title}}</h2>
+          <p class="black-text">{{.Params.subtitle}}</p>
+          <p class="margin-paragraph-left">{{.Params.description}} </p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-fluid mx-auto" src=" {{.Params.image}} " alt="Generic placeholder image">
+        </div>
+      </div>
 
       <hr class="featurette-divider">
+            {{end}}
+          {{end}}
+ 
+    {{end}}
+
+      <!-- <hr class="featurette-divider">
 
       <div class="row featurette">
         <div class="col-md-7">
@@ -132,7 +155,7 @@
       </div>
 
 
-      <hr class="featurette-divider">
+      <hr class="featurette-divider"> -->
 
 
 
