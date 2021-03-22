@@ -174,7 +174,7 @@ function generateCurrent(obj,name){
 function team_generator(){
     console.log("entered");
 
-    fetch('http://plab.shipsme.com/assets/team.json').then(res=>res.json()).then(insts=>{
+    fetch('https://plab.shipsme.com/assets/team.json').then(res=>res.json()).then(insts=>{
         
         console.log(insts);
         for(let name in insts) {

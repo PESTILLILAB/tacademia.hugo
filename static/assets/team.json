@@ -1,21 +1,6 @@
 {
-    "Giulia Bertò":{
-        "type" : "alumni",
-        "ORCID" : "false", 
-        "image" : "https://brainlife.io/images/avatar/giulia3.png",
-        "role":"Data and Application Engineer",
-        "location":"BrainLife",
-        "description" : ""
-    },
-    "Lindsey Kitchell" :{
-        "type" : "alumni",
-        "ORCID" : "true",
-        "id" : "0000-0002-5498-5306",
-        "image" : "https://brainlife.io/images/avatar/lindseykitchell.jpg",
-        "summary" : "Lindsey is a Ph.D. candidate at Indiana University. She implemented many of the early brainlife.io Apps as part of her research projects in the Pestilli Laboratory. Lindsey is passionate about Machine-Learning, shape analysis, and 3D-printing technology."
-    },
     "Sophia Vinci-Booher":{
-        "type" : "current",
+        "type" : "active",
         "ORCID" : "true",
         "id" : "0000-0002-3626-146X",
         "summary": "Postdoctoral Fellow",
@@ -28,7 +13,7 @@
 
     },
     "Franco Pestilli" : {
-        "type" : "current",
+        "type" : "active",
         "ORCID":"true",
         "image": "https://brainlife.io/images/avatar/franco.jpg",
         "id": "0000-0002-2469-0494",
@@ -42,7 +27,7 @@
          }
     },
     "Bradley Caron" : {
-        "type" : "current",
+        "type" : "active",
         "ORCID" : "true",
         "image" : "https://brainlife.io/images/avatar/brad.jpg",
         "id":"0000-0002-4486-1203",
@@ -54,7 +39,7 @@
         
     },
     "Sandra HaneKamp" : {
-        "type" : "current",
+        "type" : "active",
         "ORCID" : "true",
         "image" : "https://brainlife.io/images/avatar/sandra.jpg",
         "id":"0000-0002-4486-1203",
@@ -65,7 +50,7 @@
          }
     },
     "Ricardo Stuck" : {
-        "type" : "current",
+        "type" : "active",
         "ORCID" : "true",
         "image" : "https://lh3.googleusercontent.com/a-/AOh14GgBwy9LOFYaemp7Vdkug38Gnwz9Ssi4IP9hM0JBpg=s40",
         "id":"0000-0001-7493-5413",

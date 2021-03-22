@@ -279,7 +279,7 @@ function generateAlumni(obj){
 function team_generator(){
     console.log("entered");
 
-    fetch('http://plab.shipsme.com/assets/team.json').then(res=>res.json()).then(insts=>{
+    fetch('https://plab.shipsme.com/assets/team.json').then(res=>res.json()).then(insts=>{
         
         console.log(insts);
         for(let name in insts) {
@@ -386,7 +386,7 @@ function generatePublication(title,date,authors,link,doi,journal) {
     document.getElementById('_publications').innerHTML += content;
 }
 
-axios.get('http://plab.shipsme.com/assets/pub.xml', { data: null }, axios.defaults.headers)
+axios.get('https://plab.shipsme.com/assets/pub.xml', { data: null }, axios.defaults.headers)
             .then(response => {
                 console.log(response.data)
                 var jsonObj2 = parser.parse(response.data);
@@ -406,7 +406,7 @@ axios.get('http://plab.shipsme.com/assets/pub.xml', { data: null }, axios.defaul
  });
 
 function pub_gen(){
-    axios.get('http://plab.shipsme.com/assets/pub.xml', { data: null }, axios.defaults.headers)
+    axios.get('https://plab.shipsme.com/assets/pub.xml', { data: null }, axios.defaults.headers)
             .then(response => {
                 console.log(response.data)
                 var jsonObj2 = parser.parse(response.data);
