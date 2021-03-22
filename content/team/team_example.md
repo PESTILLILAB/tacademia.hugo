@@ -1,10 +1,12 @@
 ---
 name : User Name
-image : image/user.png
+image : img/user.png
+position : Example Text
 facebook : url
-orcid : url 
+scholar : url 
 linkedin : url
-twitter : github
+twitter : url
+github : url
 weight: 100
 tags : ['current']
 ---

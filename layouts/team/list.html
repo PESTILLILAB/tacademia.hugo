@@ -39,51 +39,33 @@
       <!-- Three columns of text below the carousel -->
       <div class="row" id='teampage-section-current'>
         <div class="margin-5px"></div>
-
+        {{ range .Pages }}
+        {{ if in .Params.tags "current" }}
         <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
           <div class="text-center">
-            <img src="{{ .Site.BaseURL }}img/user.png" class="rounded-circle" alt="Generic placeholder image" width="140" height="140">
+            <img src="{{ .Site.BaseURL }}{{.Params.image}}" class="rounded-circle" alt="Generic placeholder image" width="140" height="140">
 
             <div class="margin-5px"></div>
-            <h5 class="font-bold">Sample Name</h5>
-            <p class="position-team">POSITION NAME </p>
-            <p class="text-center caption-team">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.
-              Etiam porta sem malesuada magna mollis euismod.</p>
+            <h5 class="font-bold">{{.Params.name}}</h5>
+            <p class="position-team">{{.Params.position}}</p>
+            <p>
+              {{if .Params.facebook}}
+              <a href ="{{.Params.facebook}}"><i class="icons fab fa-facebook-square fa-lg"></i></a>&nbsp
+              {{end}}
+              <!-- {{if .Params.scholar}}
+              <a href ="{{.Params.scholar}}"><i class="icons fa fa-graduation fa-lg"></i></a>&nbsp
+              {{end}} -->
+              {{if .Params.twitter}}
+              <a href ="{{.Params.twitter}}"><i class="icons fab fa-twitter-square fa-lg"></i></a>&nbsp
+              {{end}}
+              {{if .Params.github}}
+              <a href ="{{.Params.github}}"><i class="icons fab fa-github-square fa-lg"></i></a>&nbsp
+              {{end}}
+            </p>
           </div>
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
-          <div class="text-center">
-            <img src="{{ .Site.BaseURL }}img/user.png" class="rounded-circle" alt="Generic placeholder image" width="140" height="140">
-
-            <div class="margin-5px"></div>
-            <h5 class="font-bold">Sample Name</h5>
-            <p class="position-team">POSITION NAME </p>
-            <p class="text-center caption-team">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.
-              Etiam porta sem malesuada magna mollis euismod.</p>
-          </div>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
-          <div class="text-center">
-            <img src="{{ .Site.BaseURL }}img/user.png" class="rounded-circle" alt="Generic placeholder image" width="140" height="140">
-
-            <div class="margin-5px"></div>
-            <h5 class="font-bold">Sample Name</h5>
-            <p class="position-team">POSITION NAME </p>
-            <p class="text-center caption-team">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.
-              Etiam porta sem malesuada magna mollis euismod.</p>
-          </div>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
-          <div class="text-center">
-            <img src="{{ .Site.BaseURL }}img/user.png" class="rounded-circle" alt="Generic placeholder image" width="140" height="140">
-
-            <div class="margin-5px"></div>
-            <h5 class="font-bold">Sample Name</h5>
-            <p class="position-team">POSITION NAME </p>
-            <p class="text-center caption-team">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.
-              Etiam porta sem malesuada magna mollis euismod.</p>
-          </div>
-        </div><!-- /.col-lg-4 -->
+        {{end}}
+        {{end}}
         <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
           <div class="text-center">
             <img src="{{ .Site.BaseURL }}img/user.png" class="rounded-circle" alt="Generic placeholder image" width="140" height="140">
@@ -108,6 +90,34 @@
       </div>
       <div class="row" id='teampage-section-alumni'>
 
+        {{ range .Pages }}
+        {{ if in .Params.tags "alumni" }}
+        <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+          <div class="text-center">
+            <img src="{{ .Site.BaseURL }}{{.Params.image}}" class="rounded-circle" alt="Generic placeholder image" width="140" height="140">
+
+            <div class="margin-5px"></div>
+            <h5 class="font-bold">{{.Params.name}}</h5>
+            <p class="position-team">{{.Params.position}}</p>
+            <p>
+              {{if .Params.facebook}}
+              <a href ="{{.Params.facebook}}"><i class="icons fab fa-facebook-square fa-lg"></i></a>&nbsp
+              {{end}}
+              <!-- {{if .Params.scholar}}
+              <a href ="{{.Params.scholar}}"><i class="icons fa fa-graduation fa-lg"></i></a>&nbsp
+              {{end}} -->
+              {{if .Params.twitter}}
+              <a href ="{{.Params.twitter}}"><i class="icons fab fa-twitter-square fa-lg"></i></a>&nbsp
+              {{end}}
+              {{if .Params.github}}
+              <a href ="{{.Params.github}}"><i class="icons fab fa-github-square fa-lg"></i></a>&nbsp
+              {{end}}
+            </p>
+          </div>
+        </div><!-- /.col-lg-4 -->
+        {{end}}
+        {{end}}
+
       </div>
       <div class="row">
         <div class="col-sm"></div>
@@ -119,7 +129,33 @@
         <div class="col-sm"></div>
       </div>
       <div class="row" id='teampage-section-alumni'>
+        {{ range .Pages }}
+        {{ if in .Params.tags "collaboratos" }}
+        <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+          <div class="text-center">
+            <img src="{{ .Site.BaseURL }}{{.Params.image}}" class="rounded-circle" alt="Generic placeholder image" width="140" height="140">
 
+            <div class="margin-5px"></div>
+            <h5 class="font-bold">{{.Params.name}}</h5>
+            <p class="position-team">{{.Params.position}}</p>
+            <p>
+              {{if .Params.facebook}}
+              <a href ="{{.Params.facebook}}"><i class="icons fab fa-facebook-square fa-lg"></i></a>&nbsp
+              {{end}}
+              <!-- {{if .Params.scholar}}
+              <a href ="{{.Params.scholar}}"><i class="icons fa fa-graduation fa-lg"></i></a>&nbsp
+              {{end}} -->
+              {{if .Params.twitter}}
+              <a href ="{{.Params.twitter}}"><i class="icons fab fa-twitter-square fa-lg"></i></a>&nbsp
+              {{end}}
+              {{if .Params.github}}
+              <a href ="{{.Params.github}}"><i class="icons fab fa-github-square fa-lg"></i></a>&nbsp
+              {{end}}
+            </p>
+          </div>
+        </div><!-- /.col-lg-4 -->
+        {{end}}
+        {{end}}
       </div>
 
 
@@ -138,7 +174,7 @@
     crossorigin="anonymous"></script>
     <script src="{{ .Site.BaseURL }}js/parser.js"></script>
     <script src="https://kit.fontawesome.com/76ed678b6f.js" crossorigin="anonymous"></script>
-  <script src="{{ .Site.BaseURL }}js/team.js"></script>
+  <!-- <script src="{{ .Site.BaseURL }}js/team.js"></script> -->
   <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
