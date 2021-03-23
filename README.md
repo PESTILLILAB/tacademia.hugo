@@ -77,5 +77,94 @@ Specify the following parameters
     
     ---
 
-## Show research papers using PubMed Api
+## Configure PubMed Api and NSF data
+
+Edit the file `gen_data.py` 
+
+    nih_link = 'put your pubmed rss url'
+    nsf_data_link = 'https://api.nsf.gov/services/v1/awards.json?keyword="your keywords"&printFields=startDate,expDate,id,title,awardee,agency,awardeeName,piFirstName,piLastName,coPDPI'
+Save and close the file 
+
+
+
+Run the file using python
+
+    python3 /plab/plab.hugo/gen_data.py
+By default the update time is set 10 seconds 
+to change or set the interval update the value in seconds
+
+    sch = scheduler()
+    
+    sch.add_job(myfn, 'interval', seconds=10)
+    
+    sch.start()
+
+## Updating Team using ORCID
+Open the team.json file
+
+    plab/plab.hugo/static/assets/team.json
+Add a json entry 
+ Example : 
+   
+    "Franco Pestilli" : {
+    
+	    "type" : "active",
+	    
+	    "ORCID":"true",
+	    
+	    "image": "https://brainlife.io/images/avatar/franco.jpg",
+	    
+	    "id": "0000-0002-2469-0494",
+	    
+	    "summary": "A small description",
+	    
+	    "externals" : {
+	    
+		    "twitter" : "url",
+		    
+		    "facebook" : "url",
+		    
+		    "scholar" : "url",
+		    "github" : "url"
+	    
+    }
+    
+    },
+
+Save and then run the file team.py 
+
+    python3 /plab/plab.hugo/team.py
+    
+## Updating Team using Hugo
+
+`hugo new team/examplename.md`
+
+Open the file and provide the following entries
+
+    ---
+    
+    name : User Name
+    
+    image : image path [Example : /img/user.png]
+    
+    position : Example Text
+    
+    facebook : url
+    
+    scholar : url
+    
+    linkedin : url
+    
+    twitter : url
+    
+    github : url
+    
+    weight: 100
+    
+    tags : ['active']
+
+    ---
+
+
+
 
