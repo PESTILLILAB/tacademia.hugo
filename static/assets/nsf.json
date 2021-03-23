@@ -3,17 +3,6 @@
     "award" : [ {
       "agency" : "NSF",
       "awardeeName" : "Indiana University",
-      "coPDPI" : [ "Eleftherios  Garyfallidis", "Ivo D Dinov", "Lei  Wang", "Robert  Henschel" ],
-      "id" : "1734853",
-      "piFirstName" : "Franco",
-      "piLastName" : "Pestilli",
-      "startDate" : "09/01/2017",
-      "expDate" : "08/31/2021",
-      "title" : "NCS-FO: Connectome mapping algorithms with application to community services for big data neuroscience",
-      "awardee" : "TRUSTEES OF INDIANA UNIVERSITY"
-    }, {
-      "agency" : "NSF",
-      "awardeeName" : "Indiana University",
       "coPDPI" : [ "Olaf  Sporns", "Andrew J Saykin", "Lei  Wang" ],
       "id" : "1636893",
       "piFirstName" : "Franco",
@@ -21,6 +10,17 @@
       "startDate" : "09/01/2016",
       "expDate" : "08/31/2021",
       "title" : "BD Spokes: SPOKE: MIDWEST: Collaborative: Advanced Computational Neuroscience Network (ACNN)",
+      "awardee" : "TRUSTEES OF INDIANA UNIVERSITY"
+    }, {
+      "agency" : "NSF",
+      "awardeeName" : "Indiana University",
+      "coPDPI" : [ "Eleftherios  Garyfallidis", "Ivo D Dinov", "Lei  Wang", "Robert  Henschel" ],
+      "id" : "1734853",
+      "piFirstName" : "Franco",
+      "piLastName" : "Pestilli",
+      "startDate" : "09/01/2017",
+      "expDate" : "08/31/2021",
+      "title" : "NCS-FO: Connectome mapping algorithms with application to community services for big data neuroscience",
       "awardee" : "TRUSTEES OF INDIANA UNIVERSITY"
     }, {
       "agency" : "NSF",
