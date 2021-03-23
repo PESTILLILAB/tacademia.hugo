@@ -379,31 +379,18 @@ var dataUrl = CORS_PROXY+'https://pubmed.ncbi.nlm.nih.gov/rss/search/1-E-T-Pur1F
 //     }
 // });
 
-function generatePublication(title,date,authors,link,doi,journal) {
+function generatePublication(title,date,authors,link,doi,journal,count) {
     var doi_num = doi [doi.length - 1];
-    content = '<li class="timeline-item bg-white rounded ml-3 p-4 shadow"> <div class="timeline-arrow"></div><p><span class="orange-text">'+date+'</span></p><h2 class="h5">'+title+'</h2><p>'+authors+'</p> <p class="journal bold">'+journal+'<br><span><a href='+link+'><span class="badge badge-pill badge-info">'+doi_num+'</a></span></p></li>'
+
+    if(count %2 ==0){
+        content = '<li class="timeline-item rounded ml-3 p-4 right" dt-date ='+date+' data-event-date='+date+' > <div class="event_date blue-text">'+date+'</div><h2 class="h5">'+title+'</h2><p>'+authors+'</p> <p class="journal bold">'+journal+'<br><span><a href='+link+'><span class="badge badge-pill badge-info">'+doi_num+'</a></span></p></li>'
+    }else{
+        content = '<li class="timeline-item rounded ml-3 p-4 left" dt-date ='+date+' data-event-date='+date+' > <div class="event_date blue-text">'+date+'</div><h2 class="h5">'+title+'</h2><p>'+authors+'</p> <p class="journal bold">'+journal+'<br><span><a href='+link+'><span class="badge badge-pill badge-info">'+doi_num+'</a></span></p></li>'
+    }
     console.log("ddd"+doi_num);
+    console.log(count)
     document.getElementById('_publications').innerHTML += content;
 }
-
-axios.get('https://plab.shipsme.com/assets/pub.xml', { data: null }, axios.defaults.headers)
-            .then(response => {
-                console.log(response.data)
-                var jsonObj2 = parser.parse(response.data);
-                console.log(jsonObj2);
-                console.log(jsonObj2.rss.channel.item.length);
-                for(i=0; i <= jsonObj2.rss.channel.item.length;i++){
-                    var output = jsonObj2.rss.channel.item[i];
-                    var title = output.title;
-                    var date = output["dc:date"];
-                    var authors = output["dc:creator"];
-                    // authors.split
-                    var link = output["link"];
-                    var doi = output["dc:identifier"]
-                    var journal = output["dc:source"]
-                    generatePublication(title, date,authors,link,doi,journal);
-                }
- });
 
 function pub_gen(){
     axios.get('https://plab.shipsme.com/assets/pub.xml', { data: null }, axios.defaults.headers)
@@ -412,6 +399,7 @@ function pub_gen(){
                 var jsonObj2 = parser.parse(response.data);
                 console.log(jsonObj2);
                 console.log(jsonObj2.rss.channel.item.length);
+                var count = 0;
                 for(i=0; i <= jsonObj2.rss.channel.item.length;i++){
                     var output = jsonObj2.rss.channel.item[i];
                     var title = output.title;
@@ -421,7 +409,8 @@ function pub_gen(){
                     var link = output["link"];
                     var doi = output["dc:identifier"]
                     var journal = output["dc:source"]
-                    generatePublication(title, date,authors,link,doi,journal);
+                    generatePublication(title, date,authors,link,doi,journal,count);
+                    count+=1;
                 }
  });
 }
