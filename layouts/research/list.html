@@ -310,34 +310,30 @@ ul > li:nth-child(even) div.event_date {right: 0;}
 
       <!-- START THE FEATURETTES -->
 <div class="container">
-      <hr class="featurette-divider">
+  <hr class="featurette-divider">
+
+          {{ with .Site.GetPage "/research/" }}
+          {{range .Pages}}
+          {{if in .Params.tags "feature"}}
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading margin-paragraph-left">Hero Header</h2>
-          <p class="black-text">AMAZING SUB HEADER FOR THE HERO HEADER</p>
-          <p class="margin-paragraph-left">Tiramisu gummies chocolate bar pie cake pastry. Sweet muffin sugar plum pastry wafer lemon drops biscuit topping carrot cake. Muffin apple pie candy canes gingerbread halvah halvah. Toffee toffee powder powder candy canes. Wafer danish donut gingerbread carrot cake marshmallow tart. Apple pie jelly beans chocolate cake. Liquorice muffin brownie jujubes gingerbread dragée donut. Marshmallow pudding chupa chups. Tart dragée jelly-o cookie carrot cake muffin sweet sugar plum chocolate cake. Lemon drops marzipan dessert. Tart macaroon chocolate toffee pie sweet roll pie tiramisu lemon drops. Croissant muffin gingerbread. Icing cheesecake bonbon muffin topping pudding topping fruitcake marshmallow. </p>
+          <h2 class="featurette-heading margin-paragraph-left">{{.Params.title}}</h2>
+          <p class="black-text">{{.Params.subtitle}}</p>
+          <p class="margin-paragraph-left">{{.Params.description}} </p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-fluid mx-auto"src="{{ .Site.BaseURL }}img/500x500.svg" alt="Generic placeholder image">
+          <img class="featurette-image img-fluid mx-auto" src=" {{.Params.image}} " alt="Generic placeholder image">
         </div>
       </div>
 
       <hr class="featurette-divider">
+            {{end}}
+          {{end}}
 
-      <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading margin-paragraph-right ">Hero Header</h2>
-            <p class="black-text margin-paragraph-right ">AMAZING SUB HEADER FOR THE HERO HEADER</p>
-            <p class="margin-paragraph-right">Tiramisu gummies chocolate bar pie cake pastry. Sweet muffin sugar plum pastry wafer lemon drops biscuit topping carrot cake. Muffin apple pie candy canes gingerbread halvah halvah. Toffee toffee powder powder candy canes. Wafer danish donut gingerbread carrot cake marshmallow tart. Apple pie jelly beans chocolate cake. Liquorice muffin brownie jujubes gingerbread dragée donut. Marshmallow pudding chupa chups. Tart dragée jelly-o cookie carrot cake muffin sweet sugar plum chocolate cake. Lemon drops marzipan dessert. Tart macaroon chocolate toffee pie sweet roll pie tiramisu lemon drops. Croissant muffin gingerbread. Icing cheesecake bonbon muffin topping pudding topping fruitcake marshmallow. </p>
-           </div>
-        <div class="col-md-5 order-md-1">
-          <img class="featurette-image img-fluid mx-auto" src="{{ .Site.BaseURL }}img/500x500.svg" alt="Generic placeholder image">
-        </div>
-      </div>
+      {{end}}
 
 
-      <hr class="featurette-divider">
       <div class="row text-center mb-5">
         <div class="col-lg-8 mx-auto">
             <h1>Random Headline</h1>
