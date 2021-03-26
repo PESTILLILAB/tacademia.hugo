@@ -295,11 +295,37 @@ ul > li:nth-child(even) div.event_date {right: 0;}
 
 <main role="main">
 
+  
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
+
+      <hr class="featurette-divider">
+
+      {{ with .Site.GetPage "/research/" }}
+      {{range .Pages}}
+      {{if in .Params.tags "feature"}}
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading margin-paragraph-left">{{.Params.title}}</h2>
+      <p class="black-text">{{.Params.subtitle}}</p>
+      <p class="margin-paragraph-left">{{.Params.description}} </p>
+    </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-fluid mx-auto" src=" /{{.Params.image}} " alt="Generic placeholder image">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+        {{end}}
+      {{end}}
+
+  {{end}}
+
+
       <div class="row">
         <div class="col-sm"></div>
         <div class="col-sm">
