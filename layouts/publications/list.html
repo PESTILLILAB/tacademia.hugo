@@ -291,16 +291,41 @@
       
       }
         </style>
-    <div class="position-relative overflow-hidden p-3 p-md-5 text-center " style="background-image : url('{{ .Site.BaseURL }}/img/publications.jpg') ;background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */">
-        <div class="col-md-5 p-lg-5 my-5">
-            <div class="rect float-left"> <h1>PUBLICATIONS</h1></div>
-          <p class="lead font-weight-normal invisible ">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple's marketing pages.</p>
-          <a class="btn btn-outline-secondary invisible " href="#">Coming soon</a>
-        </div>
-        <div class="product-device box-shadow d-none d-md-block"></div>
-        <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        {{ with .Site.GetPage "/publications/" }}
+          {{range .Pages}}
+          {{if in .Params.tags "slider"}}
+  
+          <div class="carousel-item active">
+            <img class="first-slide" src="{{.Params.image}}" alt="First slide">
+            <div class="container">
+              <div class="carousel-caption {{.Params.align}} ">
+                <div class="rect float-right"><h1>{{.Params.title}}</h1></div>
+                <!-- <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
+              </div>
+            </div>
+          </div>
+          {{end}}
+          {{end}}
+        {{end}}
       </div>
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  
+  
     <main role="main">
   
       <div class="container py-5">
