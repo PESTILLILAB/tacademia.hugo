@@ -5,6 +5,9 @@ ORCID : https://orcid.org/0000-0003-3641-3491
 position : Software Engineer at Indiana University, Bloomington
 image : https://en.gravatar.com/userimage/11088201/402ad6c44c48147d0b1c3b164fcf9618.jpg?size=200
 twitter : https://twitter.com/soichih
+draft: false
+type : "team"
+date: 2019-07-26T11:54:01-04:00
 linkedin : https://www.linkedin.com/in/soichihayashi/
 resume : https://docs.google.com/document/d/17fKDYHgBalLlfEvJQfdrYhar5Er-d9D1ItTDSnG-lPs
 github : https://github.com/soichih
