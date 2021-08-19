@@ -301,7 +301,7 @@ ul > li:nth-child(even) div.event_date {right: 0;}
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      {{ with .Site.GetPage "/team/" }}
+      {{ with .Site.GetPage "/team" }}
         {{range .Pages}}
         {{if in .Params.tags "slider"}}
 
@@ -338,7 +338,7 @@ ul > li:nth-child(even) div.event_date {right: 0;}
 
       <hr class="featurette-divider">
 
-      {{ with .Site.GetPage "/research/" }}
+      {{ with .Site.GetPage "/research" }}
       {{range .Pages}}
       {{if in .Params.tags "feature"}}
 

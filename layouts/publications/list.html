@@ -298,7 +298,7 @@
         <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
-        {{ with .Site.GetPage "/publications/" }}
+        {{ with .Site.GetPage "/publications" }}
           {{range .Pages}}
           {{if in .Params.tags "slider"}}
   

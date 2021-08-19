@@ -29,7 +29,7 @@
         <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
-        {{ with .Site.GetPage "/home/" }}
+        {{ with .Site.GetPage "/home" }}
           {{range .Pages}}
           {{if in .Params.tags "slider"}}
 
@@ -118,7 +118,7 @@
       <hr class="featurette-divider">
 
      
-    {{ with .Site.GetPage "/home/" }}
+    {{ with .Site.GetPage "/home" }}
           {{range .Pages}}
           {{if in .Params.tags "feature"}}
 
