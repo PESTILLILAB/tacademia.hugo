@@ -6,7 +6,7 @@ Customizable Hugo wesbite template
 
   
 
-- Customisable Home Page
+- Customisable Home Page with sliders, infobox and featurettes
 
 - Create slides using markdown
 
@@ -48,6 +48,22 @@ Specify the following parameters
         tags : ['slider']
     
     ---
+### Create InfoBox using mardown
+
+Create a new file in content/home
+
+`hugo new home/infobox.md`
+
+Specify the following parameters
+
+	---
+	title: TEAM
+	description : Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. 
+	image : img/group.svg
+	url : '/team'
+	tags : ['infobox']
+	---
+
 
 ### Create feature using markdown
 
