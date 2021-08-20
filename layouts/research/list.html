@@ -240,7 +240,7 @@
   right: 7px;
   background-color: white;
   border: 3px solid #FF9F55;
-  top: 20px;
+  top: 25px;
   border-radius: 50%;
   z-index: 1;
 }
@@ -367,7 +367,13 @@ ul > li:nth-child(even) div.event_date {right: 0;}
                     {{.Params.startDate}}
                   </div>
                   <h2 class="h5" style="margin-bottom:0.25rem">{{.Title}}</h2><p style="margin-bottom:0.25rem">{{.Params.piFirstName}} {{.Params.piLastName}} {{if .Params.coPDPI}} , {{delimit .Params.coPDPI ", "}} {{ end }}</p>
-                  <p class="journal bold" style="margin-bottom:0.15rem">FUNDING : <span class="rect-bg">{{.Params.agency}}</span></p>
+                  <p class="journal bold" style="margin-bottom:0.15rem">FUNDING : 
+                    {{if eq .Params.agency "NSF"}}
+                        <img src="{{ .Site.BaseURL }}img/nsf.png" style="width:40px;height:40px">
+                    {{else}}
+                    <span class="rect-bg">{{.Params.agency}}</span>
+                    {{end}}
+                  </p>
                 
                   {{if .Params.external_url}}
                   <a href="{{.Params.external_url}}" class="btn btn-gray btn-sm">More</a>
