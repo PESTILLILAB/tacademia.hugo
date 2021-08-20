@@ -48,27 +48,19 @@
 
       <!-- Three columns of text below the carousel -->
       <div class="row" id='homepage-section-1'>
-        <div class="col-lg-4">
-          <!-- <div class="margin-50px"></div> -->
-          <img class = 'margin-50px' src="img/chip.svg" alt="Generic placeholder image" width="140" height="140">
-          <h2 class="font-bold">RESEARCH</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. .</p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class = 'margin-50px'  src="img/paper.svg" alt="Generic placeholder image" width="140" height="140">
-          <h2  class="font-bold">PUBLICATIONS</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. .</p>
-          <!-- <p><a class="btn shadow-sm btn-secondary" href="#" role="button">Know More</a></p> -->
-          </div> <!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class = 'margin-50px' src="img/group.svg" alt="Generic placeholder image" width="140" height="140">
-          <h2  class="font-bold">TEAM</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. .</p>
-          <!-- <p><a class="btn shadow-sm btn-secondary" href="#" role="button">Know More</a></p> -->
-           </div><!-- /.col-lg-4 -->
+        {{ with .Site.GetPage "/home" }}
+                    {{range .Pages}}
+                        {{if in .Params.tags "infobox"}}
+                        <div class="col-lg-4">
+                            <img class = 'margin-50px'  src="{{.Params.image}}" alt="Generic placeholder image" width="140" height="140">
+                            <h2  class="font-bold">{{.Params.Title}}</h2>
+                            <p>{{.Params.description}}</p>
+                            <p><a class="btn shadow-sm btn-secondary" href="{{.Params.url}}" role="button">Know More</a></p>
+                        </div> <!-- /.col-lg-4 -->
+                        {{ end }}
+                    {{end}}
+                {{end}}
       </div><!-- /.row -->
-
-
       <!-- START THE FEATURETTES -->
       <hr class="featurette-divider">
 
