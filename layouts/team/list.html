@@ -15,7 +15,7 @@
           <a class="nav-link" href="{{ .Site.BaseURL }}publications">PUBLICATIONS</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="{{ .Site.BaseURL }}team">PEOPLE</a>
+            <a class="nav-link active" href="{{ .Site.BaseURL }}team">TEAM</a>
         </li>
       </ul>
 </nav>
@@ -243,7 +243,7 @@
   right: 7px;
   background-color: white;
   border: 3px solid #FF9F55;
-  top: 15px;
+  top: 20px;
   border-radius: 50%;
   z-index: 1;
 }
@@ -336,8 +336,6 @@ ul > li:nth-child(even) div.event_date {right: 0;}
 
     <div class="container marketing">
 
-      <hr class="featurette-divider">
-
       {{ with .Site.GetPage "/research" }}
       {{range .Pages}}
       {{if in .Params.tags "feature"}}
@@ -358,12 +356,41 @@ ul > li:nth-child(even) div.event_date {right: 0;}
       {{end}}
 
   {{end}}
-
-
+    <div class="container">
+        {{ range .Pages }}
+        {{ if in .Params.tags "pi" }}
+        <div class="row">  
+            <div class="col-md-5 text-center">
+                <img src="{{ .Params.image}}" class="rounded-circle" alt="Generic placeholder image" width="300" height="300">
+            </div>
+            <div class="col-md-7">
+                <h2 class="font-bold capitalize">{{.Params.name}}</h2>
+                <p class="position-team" style="font-size: medium">{{.Params.position}}</p>
+                <p>{{.Content}}</p>
+                <p>
+                    {{if .Params.facebook}}
+                    <a href ="{{.Params.facebook}}"><i class="icons fab fa-facebook-square fa-lg"></i></a>&nbsp
+                    {{end}}
+                    <!-- {{if .Params.scholar}}
+                    <a href ="{{.Params.scholar}}"><i class="icons fa fa-graduation fa-lg"></i></a>&nbsp
+                    {{end}} -->
+                    {{if .Params.twitter}}
+                    <a href ="{{.Params.twitter}}"><i class="icons fab fa-twitter-square fa-lg"></i></a>&nbsp
+                    {{end}}
+                    {{if .Params.github}}
+                    <a href ="{{.Params.github}}"><i class="icons fab fa-github-square fa-lg"></i></a>&nbsp
+                    {{end}}
+                </p>
+            </div>
+      </div>
+      {{end}}
+      {{end}}
+    </div>
+    <hr>
       <div class="row">
         <div class="col-sm"></div>
         <div class="col-sm">
-          <h2 class="text-center font-bold">OUR TEAM </h2>
+          <h2 class="text-center font-bold">TEAM </h2>
           <p class="text-center semi-bold linespace" style="font-size: smaller;"> Lorem ipsum dolor sit amet, consetetur
             sadipscing elitr, </p>
         </div>
@@ -377,7 +404,7 @@ ul > li:nth-child(even) div.event_date {right: 0;}
         {{ if in .Params.tags "active" }}
         <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
           <div class="text-center">
-            <img src="{{.Params.image}}" class="rounded-circle" alt="Generic placeholder image" width="140" height="140">
+            <img src="{{.Params.image}}" class="rounded-circle" alt="Generic placeholder image" width="200" height="200">
 
             <div class="margin-5px"></div>
             <h5 class="font-bold">{{.Params.name}}</h5>
@@ -501,8 +528,8 @@ ul > li:nth-child(even) div.event_date {right: 0;}
               <div class="event_date blue-text">
                 {{.Params.startDate}}
               </div>
-              <h2 class="h5">{{.Title}}</h2><p>{{.Params.piFirstName}} {{.Params.piLastName}} {{if .Params.coPDPI}} , {{delimit .Params.coPDPI ", "}} {{ end }}</p>
-              <p class="journal bold">FUNDING : <span class="rect-bg">{{.Params.agency}}</span></p>
+              <h2 class="h5" style="margin-bottom:0.25rem">{{.Title}}</h2><p>{{.Params.piFirstName}} {{.Params.piLastName}} {{if .Params.coPDPI}} , {{delimit .Params.coPDPI ", "}} {{ end }}</p>
+              <p class="journal bold" style="margin-bottom:0.25rem">FUNDING : <span class="rect-bg">{{.Params.agency}}</span></p>
             
               {{if .Params.external_url}}
               <a href="{{.Params.external_url}}" class="btn btn-gray">Learn More</a>

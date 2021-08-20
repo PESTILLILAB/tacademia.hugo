@@ -14,7 +14,7 @@
            <a class="nav-link" href="{{ .Site.BaseURL }}publications">PUBLICATIONS</a>
          </li>
          <li class="nav-item">
-             <a class="nav-link" href="{{ .Site.BaseURL }}team">PEOPLE</a>
+             <a class="nav-link" href="{{ .Site.BaseURL }}team">TEAM</a>
          </li>
        </ul>
   </nav>
@@ -84,7 +84,6 @@
   .timeline-item.right::before {
     left: 8px;
   }
-  
   .timeline-item .date {
     position: absolute;
     display: inline-block;
@@ -241,7 +240,7 @@
   right: 7px;
   background-color: white;
   border: 3px solid #FF9F55;
-  top: 15px;
+  top: 20px;
   border-radius: 50%;
   z-index: 1;
 }
@@ -286,11 +285,9 @@ ul > li:nth-child(even) div.event_date {right: 0;}
 .h5,p{
   margin-top: 0 !important
 }
-
 }
   </style>
 <main role="main">
-
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -332,8 +329,6 @@ ul > li:nth-child(even) div.event_date {right: 0;}
 
       <!-- START THE FEATURETTES -->
 <div class="container">
-  <hr class="featurette-divider">
-
           {{ with .Site.GetPage "/research" }}
           {{range .Pages}}
           {{if in .Params.tags "feature"}}
@@ -371,11 +366,11 @@ ul > li:nth-child(even) div.event_date {right: 0;}
                   <div class="event_date blue-text">
                     {{.Params.startDate}}
                   </div>
-                  <h2 class="h5">{{.Title}}</h2><p>{{.Params.piFirstName}} {{.Params.piLastName}} {{if .Params.coPDPI}} , {{delimit .Params.coPDPI ", "}} {{ end }}</p>
-                  <p class="journal bold">FUNDING : <span class="rect-bg">{{.Params.agency}}</span></p>
+                  <h2 class="h5" style="margin-bottom:0.25rem">{{.Title}}</h2><p style="margin-bottom:0.25rem">{{.Params.piFirstName}} {{.Params.piLastName}} {{if .Params.coPDPI}} , {{delimit .Params.coPDPI ", "}} {{ end }}</p>
+                  <p class="journal bold" style="margin-bottom:0.15rem">FUNDING : <span class="rect-bg">{{.Params.agency}}</span></p>
                 
                   {{if .Params.external_url}}
-                  <a href="{{.Params.external_url}}" class="btn btn-gray">Learn More</a>
+                  <a href="{{.Params.external_url}}" class="btn btn-gray btn-sm">More</a>
                 </li>
                   {{end}}
                   {{end}}
