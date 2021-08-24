@@ -288,45 +288,21 @@ ul > li:nth-child(even) div.event_date {right: 0;}
 }
   </style>
 <main role="main">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      {{ with .Site.GetPage "/research" }}
+    {{ with .Site.GetPage "/research" }}
         {{range .Pages}}
-        {{if in .Params.tags "slider"}}
-
-        <div class="carousel-item active">
-          <img class="first-slide" src="{{.Params.image}}" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption {{.Params.align}} ">
-              <div class="rect float-right"><h1>{{.Params.title}}</h1></div>
-              <!-- <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
+        {{if in .Params.tags "banner"}}
+        <div class="jumbotron jumbotron-fluid" style="background-image: url('{{.Params.image}}'); background-size: cover;">
+            <div class="container">
+              <h1 class="display-4">{{.Params.title}}</h1>
+              <p class="lead">{{.Params.description}}</p>
             </div>
-          </div>
-        </div>
+          </div>        
         {{end}}
         {{end}}
       {{end}}
-    </div>
-    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
 
 
     <!-- Wrap the rest of the page in another container to center all the content. -->
-
-
-
       <!-- START THE FEATURETTES -->
 <div class="container">
           {{ with .Site.GetPage "/research" }}
