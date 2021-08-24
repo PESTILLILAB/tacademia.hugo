@@ -69,11 +69,11 @@ Specify the following parameters
 
 Specify the following parameters:
 
----
-title: Example Slide
-image : /img/image_path.jpg
-tags : ['banner']
----
+	---
+	title: Example Slide
+	image : /img/image_path.jpg
+	tags : ['banner']
+	---
 
 ### Create feature using markdown
 
