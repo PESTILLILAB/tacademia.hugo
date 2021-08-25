@@ -3,7 +3,7 @@ name : Franco Pestilli
 tags : ['pi']
 ORCID : true
 position : Associate Professor, Department of Psychology, The University of Texas, Austin
-image : https://brainlife.io/images/avatar/franco.jpg
+image : /img/Pestilli_Franco_Associate_Professor_Psychology_UT.jpg
 twitter : https://twitter.com/furranko
 linkedin : https://www.linkedin.com/in/francopestilli/
 CV : https://minio.la.utexas.edu/colaweb-prod/person_files/0/9023/Pestilli_CV_WEB_2021_08_25.pdfhttps://minio.la.utexas.edu/colaweb-prod/person_files/0/9023/Pestilli_CV_WEB_2021_08_25.pdf
