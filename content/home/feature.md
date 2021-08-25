@@ -1,7 +1,7 @@
 ---
-title: The Human Visual Pathways and Skilled Reading
-subtitle : AMAZING SUB HEADER FOR THE HERO HEADER
-description : Tiramisu gummies chocolate bar pie cake pastry. Sweet muffin sugar plum pastry wafer lemon drops biscuit topping carrot cake. Muffin apple pie candy canes gingerbread halvah halvah. Toffee toffee powder powder candy canes. Wafer danish donut gingerbread carrot cake marshmallow tart. Apple pie jelly beans chocolate cake. Liquorice muffin brownie jujubes gingerbread dragée donut. Marshmallow pudding chupa chups. Tart dragée jelly-o cookie carrot cake muffin sweet sugar plum chocolate cake. Lemon drops marzipan dessert. Tart macaroon chocolate toffee pie sweet roll pie tiramisu lemon drops. Croissant muffin gingerbread. Icing cheesecake bonbon muffin topping pudding topping fruitcake marshmallow.
-image : img/500x500.svg
+title: Research vision
+subtitle : It takes the world to understand the brain.
+description : The PESTILLI LAB promotes progress in psychological and brain science via the democratization of scientific research, methods, data and infrastructure. We strive to advance societal good by accelerating neuroscientific discovery and education via data-science applications and innovative technology.
+image : img/michael-dziedzic.jpg
 tags : ['feature']
 ---
