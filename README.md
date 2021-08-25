@@ -64,6 +64,16 @@ Specify the following parameters
 	tags : ['infobox']
 	---
 
+### Creating Banner or Jumbotron for Pages 
+`hugo new pagename/banner.md`
+
+Specify the following parameters:
+
+	---
+	title: Example Slide
+	image : /img/image_path.jpg
+	tags : ['banner']
+	---
 
 ### Create feature using markdown
 
