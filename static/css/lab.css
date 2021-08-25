@@ -213,7 +213,9 @@ Black           900
     margin-left: .75rem;
   }
   
-  
+    .jumbotron {
+        min-height: 300px;
+    }
   /* Featurettes
   ------------------------- */
   
