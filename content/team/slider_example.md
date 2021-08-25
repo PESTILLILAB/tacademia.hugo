@@ -1,6 +1,6 @@
 ---
 title: Example Slide
 align : text-left
-image : /img/man-kid.jpg
+image : /img/frontera-banner1.jpeg
 tags : ['slider']
 ---
