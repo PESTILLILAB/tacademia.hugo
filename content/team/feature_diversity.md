@@ -1,6 +1,6 @@
 ---
 title: Diversity
-subtitle : It takes the world to understand the brain and the world is a village rich with people with different backgrounds and ideas.
+subtitle : It takes the world to understand the brain and the world is a village rich in people with different backgrounds.
 image : /img/Neurodiversity.png
 tags : ['feature']
 ---
