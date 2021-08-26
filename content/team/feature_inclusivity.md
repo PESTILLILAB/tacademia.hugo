@@ -1,6 +1,6 @@
 ---
 title: Inclusivity
-subtitle : Inclusivity means including all
+subtitle : Inclusion means open access to resources and a safe place for all
 image : /img/neuro_diverse2.png
 tags : ['feature']
 ---
