@@ -16,7 +16,7 @@ This website template takes the concept of timeline and proposes an open-science
  
 The template is built using [Hugo](https://github.com/gohugoio/hugo).
 
-Dheeraj Bathia and Franco Pestilli
+Dheeraj Bhatia and Franco Pestilli
 
 The University of Texas at Austin
 
@@ -110,14 +110,13 @@ Specify the following parameters
     title: Your Title
     
     subtitle : your subtitle
-    
-    description : sample description
-    
+        
     image : path of the image (Ex img/500_500.svg)
     
     tags : ['feature']
     
     ---
+    Content or Description here
 
 ## Configure PubMed Api and NSF data
 
