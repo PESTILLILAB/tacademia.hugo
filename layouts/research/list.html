@@ -291,7 +291,8 @@ ul > li:nth-child(even) div.event_date {right: 0;}
     {{ with .Site.GetPage "/research" }}
         {{range .Pages}}
         {{if in .Params.tags "banner"}}
-        <div class="jumbotron jumbotron-fluid" style="background-image: url('{{.Params.image}}'); background-size: cover;">
+        <div class="jumbotron jumbotron-fluid" style="background-image: url('{{.Params.image}}'); background-size: cover;min-height: 35vh !important;
+        ">
             <div class="container">
               <h1 class="display-4">{{.Params.title}}</h1>
               <p class="lead">{{.Params.description}}</p>
@@ -313,7 +314,7 @@ ul > li:nth-child(even) div.event_date {right: 0;}
         <div class="col-md-7">
           <h2 class="featurette-heading margin-paragraph-left">{{.Params.title}}</h2>
           <p class="black-text">{{.Params.subtitle}}</p>
-          <p class="margin-paragraph-left">{{.Params.description}} </p>
+          <p class="margin-paragraph-left">{{.Content}} </p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-fluid mx-auto" src=" {{.Params.image}} " alt="Generic placeholder image">
@@ -338,6 +339,7 @@ ul > li:nth-child(even) div.event_date {right: 0;}
             <div class="col-lg-12 mx-auto">
               <ul class="timeline" id = "_awards">
                 {{ range .Pages  }}
+                {{if isset .Params "agency"}}
                 <li class="timeline-item bg-white rounded ml-3 p-4" dt-date = {{.Params.startDate}} data-event-date= "{{.Params.startDate}} ">
                   <div class="event_date blue-text">
                     {{.Params.startDate}}
@@ -353,6 +355,7 @@ ul > li:nth-child(even) div.event_date {right: 0;}
                   {{if .Params.external_url}}
                   <a href="{{.Params.external_url}}" class="btn btn-gray btn-sm">More</a>
                 </li>
+                  {{end}}
                   {{end}}
                   {{end}}
               </ul>

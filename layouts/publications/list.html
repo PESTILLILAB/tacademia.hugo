@@ -294,10 +294,10 @@
         {{ with .Site.GetPage "/publications" }}
         {{range .Pages}}
         {{if in .Params.tags "banner"}}
-        <div class="jumbotron jumbotron-fluid" style="background-image: url('{{.Params.image}}'); background-size: cover;">
+        <div class="jumbotron jumbotron-fluid" style="background-image: url('{{.Params.image}}'); background-size: cover; min-height:50vh">
             <div class="container">
               <h1 class="display-4">{{.Params.title}}</h1>
-              <p class="lead">{{.Params.description}}</p>
+              <p class="lead">{{.Content}}</p>
             </div>
         </div>        
         {{end}}
