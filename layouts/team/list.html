@@ -315,7 +315,7 @@ ul > li:nth-child(even) div.event_date {right: 0;}
 
     <div class="container marketing">
 
-      {{ with .Site.GetPage "/research" }}
+      {{ with .Site.GetPage "/team" }}
       {{range .Pages}}
       {{if in .Params.tags "feature"}}
 
@@ -323,7 +323,7 @@ ul > li:nth-child(even) div.event_date {right: 0;}
     <div class="col-md-7">
       <h2 class="featurette-heading margin-paragraph-left">{{.Params.title}}</h2>
       <p class="black-text">{{.Params.subtitle}}</p>
-      <p class="margin-paragraph-left">{{.Params.description}} </p>
+      <p class="margin-paragraph-left">{{.Content}} </p>
     </div>
     <div class="col-md-5">
       <img class="featurette-image img-fluid mx-auto" src=" {{.Params.image}} " alt="Generic placeholder image">
