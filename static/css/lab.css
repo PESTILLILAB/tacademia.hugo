@@ -144,6 +144,9 @@ Black           900
    font-size: small;
    margin-bottom: 5px;
 }
+.teamImage{
+    object-fit: cover;
+}
 .image-center-div {
     display:table-cell; vertical-align:middle; text-align:center;
 }
@@ -213,9 +216,6 @@ Black           900
     margin-left: .75rem;
   }
   
-    .jumbotron {
-        min-height: 300px;
-    }
   /* Featurettes
   ------------------------- */
   
