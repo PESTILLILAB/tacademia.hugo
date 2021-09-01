@@ -1,5 +1,5 @@
 ---
 title: Example Slide
-image : img/frontera-banner2.jpeg
+image : /img/Screenshot-20210414115927-3153x765.png
 tags : ['banner']
 ---
