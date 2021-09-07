@@ -190,6 +190,8 @@ Open the file and provide the following entries
     
     position : Example Text
     
+    startDate : 09/01/2012 [for alumni entries]
+    
     facebook : url
     
     scholar : url
@@ -202,7 +204,7 @@ Open the file and provide the following entries
     
     weight: 100
     
-    tags : ['active']
+    tags : ['active'] you can put collaborator, alumni or active
 
     ---
 
