@@ -15,7 +15,7 @@
           <a class="nav-link" href="{{ .Site.BaseURL }}publications">PUBLICATIONS</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="{{ .Site.BaseURL }}team">PEOPLE</a>
+            <a class="nav-link active" href="{{ .Site.BaseURL }}team">TEAM</a>
         </li>
       </ul>
 </nav>
@@ -243,7 +243,7 @@
   right: 7px;
   background-color: white;
   border: 3px solid #FF9F55;
-  top: 15px;
+  top: 20px;
   border-radius: 50%;
   z-index: 1;
 }
@@ -294,40 +294,27 @@ ul > li:nth-child(even) div.event_date {right: 0;}
 
 
 <main role="main">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      {{ with .Site.GetPage "/team/" }}
-        {{range .Pages}}
-        {{if in .Params.tags "slider"}}
-
-        <div class="carousel-item active">
-          <img class="first-slide" src="{{.Params.image}}" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption {{.Params.align}} ">
-              <div class="rect float-right"><h1>{{.Params.title}}</h1></div>
-              <!-- <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
-            </div>
-          </div>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            {{ with .Site.GetPage "/team" }}
+                {{range .Pages}}
+                    {{if in .Params.tags "slider"}}
+                    <div class="carousel-item active" style="height:50vh">
+                        <img class="d-block w-100" src="{{.Params.image}}" style="height:50vh" alt="First slide">
+                    </div>
+                    {{ end }}
+                {{end}}
+            {{end}}
         </div>
-        {{end}}
-        {{end}}
-      {{end}}
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
     </div>
-    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-
 
   
     <!-- Marketing messaging and featurettes
@@ -336,9 +323,7 @@ ul > li:nth-child(even) div.event_date {right: 0;}
 
     <div class="container marketing">
 
-      <hr class="featurette-divider">
-
-      {{ with .Site.GetPage "/research/" }}
+      {{ with .Site.GetPage "/team" }}
       {{range .Pages}}
       {{if in .Params.tags "feature"}}
 
@@ -346,7 +331,7 @@ ul > li:nth-child(even) div.event_date {right: 0;}
     <div class="col-md-7">
       <h2 class="featurette-heading margin-paragraph-left">{{.Params.title}}</h2>
       <p class="black-text">{{.Params.subtitle}}</p>
-      <p class="margin-paragraph-left">{{.Params.description}} </p>
+      <p class="margin-paragraph-left">{{.Content}} </p>
     </div>
     <div class="col-md-5">
       <img class="featurette-image img-fluid mx-auto" src=" {{.Params.image}} " alt="Generic placeholder image">
@@ -358,12 +343,41 @@ ul > li:nth-child(even) div.event_date {right: 0;}
       {{end}}
 
   {{end}}
-
-
+    <div class="container">
+        {{ range .Pages }}
+        {{ if in .Params.tags "pi" }}
+        <div class="row">  
+            <div class="col-md-5 text-center">
+                <img src="{{ .Params.image}}" class="rounded-circle" alt="Generic placeholder image" width="300" height="300">
+            </div>
+            <div class="col-md-7">
+                <h2 class="font-bold capitalize">{{.Params.name}}</h2>
+                <p class="position-team" style="font-size: medium">{{.Params.position}}</p>
+                <p>{{.Content}}</p>
+                <p>
+                    {{if .Params.facebook}}
+                    <a href ="{{.Params.facebook}}"><i class="icons fab fa-facebook-square fa-lg"></i></a>&nbsp
+                    {{end}}
+                    <!-- {{if .Params.scholar}}
+                    <a href ="{{.Params.scholar}}"><i class="icons fa fa-graduation fa-lg"></i></a>&nbsp
+                    {{end}} -->
+                    {{if .Params.twitter}}
+                    <a href ="{{.Params.twitter}}"><i class="icons fab fa-twitter-square fa-lg"></i></a>&nbsp
+                    {{end}}
+                    {{if .Params.github}}
+                    <a href ="{{.Params.github}}"><i class="icons fab fa-github-square fa-lg"></i></a>&nbsp
+                    {{end}}
+                </p>
+            </div>
+      </div>
+      {{end}}
+      {{end}}
+    </div>
+    <hr>
       <div class="row">
         <div class="col-sm"></div>
         <div class="col-sm">
-          <h2 class="text-center font-bold">OUR TEAM </h2>
+          <h2 class="text-center font-bold">TEAM </h2>
           <p class="text-center semi-bold linespace" style="font-size: smaller;"> Lorem ipsum dolor sit amet, consetetur
             sadipscing elitr, </p>
         </div>
@@ -377,7 +391,7 @@ ul > li:nth-child(even) div.event_date {right: 0;}
         {{ if in .Params.tags "active" }}
         <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
           <div class="text-center">
-            <img src="{{.Params.image}}" class="rounded-circle" alt="Generic placeholder image" width="140" height="140">
+            <img src="{{.Params.image}}" class="rounded-circle teamImage" alt="Generic placeholder image" width="200" height="200">
 
             <div class="margin-5px"></div>
             <h5 class="font-bold">{{.Params.name}}</h5>
@@ -402,7 +416,7 @@ ul > li:nth-child(even) div.event_date {right: 0;}
         {{end}}
         <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
           <div class="text-center">
-            <img src="{{ .Site.BaseURL }}img/user.png" class="rounded-circle" alt="Generic placeholder image" width="140" height="140">
+            <img src="{{ .Site.BaseURL }}img/user.png" class="rounded-circle teamImage" alt="Generic placeholder image" width="140" height="140">
 
             <div class="margin-5px"></div>
             <h5 class="font-bold">Sample Name</h5>
@@ -427,7 +441,7 @@ ul > li:nth-child(even) div.event_date {right: 0;}
         {{ if in .Params.tags "collaborators" }}
         <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
           <div class="text-center">
-            <img src="{{.Params.image}}" class="rounded-circle" alt="Generic placeholder image" width="140" height="140">
+            <img src="{{.Params.image}}" class="rounded-circle" alt="Generic placeholder image teamImage" width="140" height="140">
 
             <div class="margin-5px"></div>
             <h5 class="font-bold">{{.Params.name}}</h5>
@@ -460,39 +474,45 @@ ul > li:nth-child(even) div.event_date {right: 0;}
         </div>
         <div class="col-sm"></div>
       </div>
-      <div class="row" id='teampage-section-alumni'>
-
-        {{ range .Pages }}
-        {{ if in .Params.tags "alumni" }}
-        <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
-          <div class="text-center">
-            <img src="{{ .Site.BaseURL }}{{.Params.image}}" class="rounded-circle" alt="Generic placeholder image" width="140" height="140">
-
-            <div class="margin-5px"></div>
-            <h5 class="font-bold">{{.Params.name}}</h5>
-            <p class="position-team">{{.Params.position}}</p>
-            <p>
-              {{if .Params.facebook}}
-              <a href ="{{.Params.facebook}}"><i class="icons fab fa-facebook-square fa-lg"></i></a>&nbsp
-              {{end}}
-              <!-- {{if .Params.scholar}}
-              <a href ="{{.Params.scholar}}"><i class="icons fa fa-graduation fa-lg"></i></a>&nbsp
-              {{end}} -->
-              {{if .Params.twitter}}
-              <a href ="{{.Params.twitter}}"><i class="icons fab fa-twitter-square fa-lg"></i></a>&nbsp
-              {{end}}
-              {{if .Params.github}}
-              <a href ="{{.Params.github}}"><i class="icons fab fa-github-square fa-lg"></i></a>&nbsp
-              {{end}}
-            </p>
-          </div>
-        </div><!-- /.col-lg-4 -->
-        {{end}}
-        {{end}}
-
-      </div>
 
       <div class="row">
+        <div class="col-lg-12 mx-auto" style="height:40vh;overflow:auto;">
+          <ul class="timeline" id = "_awards">
+            {{ range .Pages  }}
+            {{if in .Params.tags "alumni"}}
+            <li class="timeline-item bg-white rounded ml-3 p-4" dt-date = {{.Params.startDate}} data-event-date= "{{.Params.startDate}} ">
+              <div class="event_date blue-text">
+                {{.Params.startDate}}
+              </div>
+              <div class="text-center">
+                <img src="{{.Params.image}}" class="rounded-circle teamImage" alt="Generic placeholder image" width="140" height="140">
+    
+                <div class="margin-5px"></div>
+                <h5 class="font-bold">{{.Params.name}}</h5>
+                <p class="position-team">{{.Params.position}}</p>
+                <p>
+                  {{if .Params.facebook}}
+                  <a href ="{{.Params.facebook}}"><i class="icons fab fa-facebook-square fa-lg"></i></a>&nbsp
+                  {{end}}
+                  <!-- {{if .Params.scholar}}
+                  <a href ="{{.Params.scholar}}"><i class="icons fa fa-graduation fa-lg"></i></a>&nbsp
+                  {{end}} -->
+                  {{if .Params.twitter}}
+                  <a href ="{{.Params.twitter}}"><i class="icons fab fa-twitter-square fa-lg"></i></a>&nbsp
+                  {{end}}
+                  {{if .Params.github}}
+                  <a href ="{{.Params.github}}"><i class="icons fab fa-github-square fa-lg"></i></a>&nbsp
+                  {{end}}
+                </p>
+              </div>
+            </li>
+              {{end}}
+              {{end}}
+          </ul>
+    </div>
+
+
+      <!-- <div class="row">
         <div class="col-lg-7 mx-auto">
           <ul class="timeline" id = "_awards">
             {{ range .Pages  }}
@@ -501,8 +521,8 @@ ul > li:nth-child(even) div.event_date {right: 0;}
               <div class="event_date blue-text">
                 {{.Params.startDate}}
               </div>
-              <h2 class="h5">{{.Title}}</h2><p>{{.Params.piFirstName}} {{.Params.piLastName}} {{if .Params.coPDPI}} , {{delimit .Params.coPDPI ", "}} {{ end }}</p>
-              <p class="journal bold">FUNDING : <span class="rect-bg">{{.Params.agency}}</span></p>
+              <h2 class="h5" style="margin-bottom:0.25rem">{{.Title}}</h2><p>{{.Params.piFirstName}} {{.Params.piLastName}} {{if .Params.coPDPI}} , {{delimit .Params.coPDPI ", "}} {{ end }}</p>
+              <p class="journal bold" style="margin-bottom:0.25rem">FUNDING : <span class="rect-bg">{{.Params.agency}}</span></p>
             
               {{if .Params.external_url}}
               <a href="{{.Params.external_url}}" class="btn btn-gray">Learn More</a>
@@ -511,13 +531,13 @@ ul > li:nth-child(even) div.event_date {right: 0;}
               {{end}}
               {{end}}
           </ul>
-    </div>
-
-    </div>
+        </div>
+    </div> -->
       <!-- /END THE FEATURETTES -->
 
     </div><!-- /.container -->
   </main>
+  {{ partial "footer.html" .}}
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

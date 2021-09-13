@@ -1,0 +1,15 @@
+name = "tacademia.hugo"
+license = "MIT"
+licenselink = "Link to theme's license"
+description = "Theme description"
+homepage = "Website of your theme"
+tags = ["blog", "company"]
+features = ["some", "awesome", "features"]
+min_version = "0.59.1"
+
+# If the theme has multiple authors
+authors = [
+  {name = "Dheeraj Bhatia", homepage = "https://dheerajb.com"},
+  {name = "Franco Pestilli", homepage = "Website of author"}
+]
+

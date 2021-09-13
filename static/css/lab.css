@@ -144,6 +144,9 @@ Black           900
    font-size: small;
    margin-bottom: 5px;
 }
+.teamImage{
+    object-fit: cover;
+}
 .image-center-div {
     display:table-cell; vertical-align:middle; text-align:center;
 }
@@ -213,12 +216,11 @@ Black           900
     margin-left: .75rem;
   }
   
-  
   /* Featurettes
   ------------------------- */
   
   .featurette-divider {
-    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+    margin: 2.5rem 0; /* Space out the Bootstrap <hr> more */
   }
 
   .black-text {

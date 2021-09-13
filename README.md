@@ -1,12 +1,28 @@
-# plab.hugo
+# tacademia.hugo
 
-Customizable Hugo wesbite template
+### Timeline-oriented academic website design.
+
+The work of scientific and academic laboratories builts on innovation, and reputation. Two critical aspects of the work of a modern scientific laboratory are often times underestimated:
+- The ability to generate important scientific products (discoveries, reagents, software, or artifacts)
+- The success in training  the next generation of  scientists (students and postdocs). 
+
+Both scientific and training contributions for a scientific laboratory are critical to establish the standing of the lab, understand the climate of the lab and gauge the potential success for trainees and future opportunities for research and collaboration. Because of this, demonstrating the scientific work over time, the impact on training are generally used as key aspects of the evaluation process of the scientific laboratory. Contribution to science and training over the lifespan of a labroatory can be formalized as timelines. 
+
+This website template takes the concept of timeline and proposes an open-science approach to demonstrating the contributions. The first version of the template proposes organziing the work of scientists into three primary timelines: 
+
+- The RESEARCH axis. projects are conceptualized as timeline of projects and grants over time.
+- The TEAM axis. is conceptualized as a composition of the current team and a timeline of Lab Alumni with their first job after leaving the lab
+- The PUBLICATIONS axis. are also organized into a timeline (this is commonly done by other templates).
+ 
+The template is built using [Hugo](https://github.com/gohugoio/hugo).
+
+Dheeraj Bhatia and Franco Pestilli
+
+The University of Texas at Austin
 
 ## Features
 
-  
-
-- Customisable Home Page
+- Customisable Home Page with sliders, infobox and featurettes
 
 - Create slides using markdown
 
@@ -29,7 +45,7 @@ To edit and show more slides
 
 create a new file in content/home
 
-  
+
 
 `hugo new home/slide_example.md`
 
@@ -48,6 +64,32 @@ Specify the following parameters
         tags : ['slider']
     
     ---
+### Create InfoBox using mardown
+
+Create a new file in content/home
+
+`hugo new home/infobox.md`
+
+Specify the following parameters
+
+	---
+	title: TEAM
+	description : Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. 
+	image : img/group.svg
+	url : '/team'
+	tags : ['infobox']
+	---
+
+### Creating Banner or Jumbotron for Pages 
+`hugo new pagename/banner.md`
+
+Specify the following parameters:
+
+	---
+	title: Example Slide
+	image : /img/image_path.jpg
+	tags : ['banner']
+	---
 
 ### Create feature using markdown
 
@@ -68,14 +110,13 @@ Specify the following parameters
     title: Your Title
     
     subtitle : your subtitle
-    
-    description : sample description
-    
+        
     image : path of the image (Ex img/500_500.svg)
     
     tags : ['feature']
     
     ---
+    Content or Description here
 
 ## Configure PubMed Api and NSF data
 
@@ -149,6 +190,8 @@ Open the file and provide the following entries
     
     position : Example Text
     
+    startDate : 09/01/2012 [for alumni entries]
+    
     facebook : url
     
     scholar : url
@@ -161,7 +204,7 @@ Open the file and provide the following entries
     
     weight: 100
     
-    tags : ['active']
+    tags : ['active'] you can put collaborator, alumni or active
 
     ---
 
