@@ -2,7 +2,7 @@
 
 ### Timeline-oriented academic website design.
 
-The work of scientific and academic laboratories builts on innovation, and reputation. Two critical aspects of the work of a modern scinetific labroaotry are often times underestimated:
+The work of scientific and academic laboratories builts on innovation, and reputation. Two critical aspects of the work of a modern scientific laboratory are often times underestimated:
 - The ability to generate important scientific products (discoveries, reagents, software, or artifacts)
 - The success in training  the next generation of  scientists (students and postdocs). 
 
