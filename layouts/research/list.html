@@ -30,6 +30,7 @@
   
   .timeline::after {
     content: '';
+    height: var(--barHeight);
     position: absolute;
     width: 2px;
     background: #006E51;
@@ -404,6 +405,9 @@ ul > li:nth-child(even) div.event_date {right: 0;}
 
     var container = document.querySelector(".timeline");;
     var items = document.querySelectorAll('.timeline-item');
+    // https://stackoverflow.com/questions/21032481/change-the-style-of-before-and-after-pseudo-elements
+    let heightTimelineBar = document.getElementById('_awards').scrollHeight;
+    container.style.setProperty("--barHeight", heightTimelineBar+"px");
     
     items.forEach(
       item=> {
@@ -429,7 +433,7 @@ ul > li:nth-child(even) div.event_date {right: 0;}
         container.append(list);
       }
     });
-    
+
 });
 
     </script>

@@ -35,6 +35,7 @@
           position: absolute;
           width: 2px;
           background: #006E51;
+          height: var(--barHeight);
           top: 0;
           bottom: 0;
           left: 50%;
@@ -394,9 +395,13 @@
     /* Do things after DOM has fully loaded */ 
   
           console.log("Working")
-      var container = document.querySelector(".timeline");;
-      var items = document.querySelectorAll('.timeline-item');
-      
+        var container = document.querySelector(".timeline");;
+        var items = document.querySelectorAll('.timeline-item');
+
+          // https://stackoverflow.com/questions/21032481/change-the-style-of-before-and-after-pseudo-elements
+          let heightTimelineBar = document.getElementById('_publications').scrollHeight;
+          console.log("LENGTH IS"+document.querySelectorAll("li").length);
+          container.style.setProperty("--barHeight", heightTimelineBar*1.15*document.querySelectorAll("li").length+"px");
       items.forEach(
         item=> {
           let BCDATE = item.getAttribute("dt-date");
