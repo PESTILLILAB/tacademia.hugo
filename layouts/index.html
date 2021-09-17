@@ -61,10 +61,7 @@
                     {{end}}
                 {{end}}
       </div><!-- /.row -->
-      <!-- START THE FEATURETTES -->
-      <hr class="featurette-divider">
-
-     
+      <!-- START THE FEATURETTES -->     
     {{ with .Site.GetPage "/home" }}
           {{range .Pages}}
           {{if in .Params.tags "feature"}}
@@ -79,8 +76,6 @@
           <img class="featurette-image img-fluid mx-auto" src=" {{.Params.image}} " alt="Generic placeholder image">
         </div>
       </div>
-
-      <!-- <hr class="featurette-divider"> -->
             {{end}}
           {{end}}
  
