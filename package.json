@@ -1,0 +1,13 @@
+{
+    "scripts": {
+        "build": "hugo -d build",
+        "serve": "hugo server",
+        "clean": "rm -rf build resources public"
+    },
+    "dependencies": {
+        "hugo": "^0.0.3"
+    },
+    "devDependencies": {
+        "hugo-bin": "^0.76.1"
+    }
+}
