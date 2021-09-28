@@ -8,6 +8,7 @@ theme = "tacademia.hugo"
 
 [params.Footer]
     logo = "/img/institution.svg"
+    logoLink = "https://theuniversityofresearch.edu/"
 
     title = "PI LAB"
     address = [
@@ -25,15 +26,13 @@ theme = "tacademia.hugo"
 [params.Footer.RelatedLinks]
 
     [params.Footer.RelatedLinks."Education"]
-        "Psychology PHD" = "https://liberalarts.utexas.edu/psychology/graduate/phd.php"
-        "Neuroscience PHD" = "https://neuroscienceinstitute.utexas.edu/PhD%20Program"
-        "Computer Science PHD" = "https://www.cs.utexas.edu/graduate-program/phd-program"
+        "Psychology PHD" = "https://theuniversityofresearch.edu/departments/psychology/phd"
+        "Neuroscience PHD" = "https://theuniversityofresearch.edu/departments/neuroscience/phd"
+        "Computer Science PHD" = "https://theuniversityofresearch.edu/departments/computerscience/phd"
     
     [params.Footer.RelatedLinks."Research"]
-        "brainlife.io" = "https://brainlife.io"
-        "TACC" = "IMAGING CENTER"
-        "Indiana University UITS" = "https://dcops.iu.edu/"
-        "NeuroscienceNetwork.org" = "https://NeuroscienceNetwork.org"
+        "Research Platform" = "https://research.io"
+        "Collaborators" = "https://anotherresearchinstitution.edu/"
 
 [params.Footer.Institutional]
     "Research Department" = "https://theuniversityofresearch.edu/departments/research"
