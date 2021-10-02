@@ -3,7 +3,44 @@ languageCode = "en-us"
 title = "PI LAB"
 theme = "tacademia.hugo"
 
-[params.team]
+[menu]
+[[menu.main]]
+    identifier = "home"
+    name = "HOME"
+    url = "/"
+    weight = 1
+[[menu.main]]
+    identifier = "research"
+    name = "RESEARCH"
+    url = "/research"
+    weight = 2
+[[menu.main]]
+    identifier = "publications"
+    name = "PUBLICATIONS"
+    url = "/publications"
+    weight = 3
+[[menu.main]]
+    identifier = "team"
+    name = "TEAM"
+    url = "/team"
+    weight = 4
+[[menu.main]]
+    identifier = "news"
+    name = "NEWS"
+    url = "/news"
+    weight = 5
+[[menu.main]]
+    identifier = "events"
+    name = "EVENTS"
+    url = "/events"
+    weight = 6
+
+
+
+[params.Front]
+    carouselInterval = 3000
+
+[params.Team]
     description = "The excellent graduate and undergraduate students, postdocs, faculty and staff members of our core team, alumni and collaborators."
 
 [params.Footer]
@@ -22,6 +59,10 @@ theme = "tacademia.hugo"
     facebook = "https://facebook.com/pi-lab"
     twitter = "https://twitter.com/pi-lab"
     github = "https://github.com/pi-lab"
+
+    backgroundColor = "#FFF"
+    textColor = "#000"
+    sectionColor = "#333"
 
 [params.Footer.RelatedLinks]
 
