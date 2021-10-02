@@ -41,7 +41,10 @@ theme = "tacademia.hugo"
     carouselInterval = 3000
 
 [params.Team]
-    description = "The excellent graduate and undergraduate students, postdocs, faculty and staff members of our core team, alumni and collaborators."
+    members = "The excellent graduate and undergraduate students, postdocs, faculty and staff members of our core team, alumni and collaborators."
+    collaborators = ""
+    alumni = ""
+    iconsColor = "#444"
 
 [params.Footer]
     logo = "/img/institution.svg"
@@ -63,6 +66,7 @@ theme = "tacademia.hugo"
     backgroundColor = "#FFF"
     textColor = "#000"
     sectionColor = "#333"
+    iconsColor = "#444"
 
 [params.Footer.RelatedLinks]
 
