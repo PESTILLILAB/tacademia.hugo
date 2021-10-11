@@ -8,7 +8,7 @@
             {{range .Pages}}
                 {{if in .Params.tags "slider"}}
                 <div class="carousel-item active" style="height:50vh">
-                    <img class="d-block w-100" src="{{.Params.image}}" style="height:50vh" alt="First slide">
+                    <img class="d-block w-100" src="{{.Site.BaseURL }}{{.Params.image}}" style="height:50vh" alt="First slide">
                 </div>
                 {{ end }}
             {{end}}
@@ -35,20 +35,21 @@
      <div class="container">
         {{ with .Site.GetPage "/news" }}
             {{range .Pages}}
-                {{if in .Params.tags "post"}}
+                {{if in .Params.type "post"}}
                 <!-- <div class="carousel-item active" style="height:50vh">
                     <img class="d-block w-100" src="{{.Params.image}}" style="height:50vh" alt="First slide">
                 </div> -->
                 <div class="card mb-12">
                     <div class="row no-gutters">
                       <div class="col-md-4">
-                        <img src="{{.Site.BaseURL }}{{.Params.image}}" class="card-img" alt="...">
+                        <img src="{{.Site.BaseURL }}{{.Params.thumbnail}}" class="card-img" alt="..." style="height:100%">
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
-                          <h5>{{.Params.Title}}</h5>
-                          <p class="card-text">{{.Params.description}}</p>
-                          <p class="card-text"><small class="text-muted">{{.Params.date}}</small></p>
+                            <h5>{{.Params.Title}}</h5>
+                            <p class="card-text"><small class="text-muted">{{.Params.date.Format "January 2, 2006"}}</small></p>
+                            <p class="card-text">{{.Summary}}</p>
+                            <a href="{{.File.BaseFileName}}"><button type="button" class="btn btn-primary">Read More</button></a>
                         </div>
                       </div>
                     </div>
