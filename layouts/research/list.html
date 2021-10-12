@@ -335,7 +335,11 @@ ul > li:nth-child(even) div.event_date {right: 0;}
           <p style="color: {{.Params.textColor}}">{{.Content}} </p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-fluid mx-auto" src=" {{.Params.image}} " alt="Generic placeholder image">
+            {{if isset .Params "image"}}
+                <img class="featurette-image img-fluid mx-auto" src=" {{.Params.image}} " alt="Generic placeholder image">
+            {{else}}
+                <iframe class="featurette-video" height="auto" width ="auto" src="{{.Params.youtubeUrl}}"></iframe>
+            {{end}}
         </div>
       </div>
     </div>
