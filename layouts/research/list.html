@@ -350,6 +350,25 @@ ul > li:nth-child(even) div.event_date {right: 0;}
     {{end}}
     <hr>
     <br>
+    {{ with .Site.GetPage "/research" }}
+          {{range .Pages}}
+          {{if in .Params.tags "videoFullwidth"}}
+    <div style="background: {{.Params.backgroundColor}}">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-12 mx-auto">
+                    <h2 class="featurette-heading margin-paragraph-left" style="color: {{.Params.titleColor}}">{{.Params.title}}</h2>
+                    <p class="margin-paragraph-left" style="color: {{.Params.subtitleColor}}">{{.Params.subtitle}}</p>
+                    <div class="videoWrapper">    
+                        <iframe height="1000" width ="1000" src="{{.Params.youtubeUrl}}"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            {{end}}
+          {{end}}
+    {{end}}
 <div class="container">
       <div class="row text-center mb-5">
         <div class="col-lg-8 mx-auto">
