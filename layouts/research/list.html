@@ -360,7 +360,7 @@ ul > li:nth-child(even) div.event_date {right: 0;}
                     <h2 class="featurette-heading margin-paragraph-left" style="color: {{.Params.titleColor}}">{{.Params.title}}</h2>
                     <p class="margin-paragraph-left" style="color: {{.Params.subtitleColor}}">{{.Params.subtitle}}</p>
                     <div class="videoWrapper">    
-                        <iframe height="1000" width ="1000" src="{{.Params.youtubeUrl}}"></iframe>
+                        <iframe height="{{.Params.height}}" width ="{{.Params.width}}" src="{{.Params.youtubeUrl}}"></iframe>
                     </div>
                 </div>
             </div>
