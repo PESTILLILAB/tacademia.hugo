@@ -3,6 +3,8 @@ languageCode = "en-us"
 title = "PI LAB"
 theme = "tacademia.hugo"
 logoNav = "/img/logo.svg"
+[keys]
+    googleMaps = "yourKey"
 [[menu]]
 [[menu.main]]
     indentifier = 'home'
@@ -10,7 +12,6 @@ logoNav = "/img/logo.svg"
     name="HOME"
     URL = '/'
     weight = 100
-
 [[menu.main]]
     indentifier = 'research'
     title= 'RESEARCH'
