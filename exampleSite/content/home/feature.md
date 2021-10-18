@@ -1,7 +1,7 @@
 ---
 title: Research vision
 subtitle : It takes the world to understand the brain.
-image : img/michael-dziedzic.jpg
+image : img/500x500.svg
 tags : ['feature']
 backgroundColor : '#000000'
 titleColor : '#ffffff'
