@@ -1,6 +1,6 @@
 ---
 title: Example Slide
 align : text-left
-image : img/frontera_blue_cables.jpeg
-tags : ['slider']
+image : img/research.jpg
+tags : ['slider','active']
 ---
