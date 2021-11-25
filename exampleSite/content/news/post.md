@@ -4,7 +4,7 @@ date: "2014-03-29"
 description: "This should be a more useful description"
 tags : ['post']
 type : post
-thumbnail : img/austin-growingcity-pestilli.jpeg
+thumbnail : img/500x500.svg
 ---
 
 ## First Heading
