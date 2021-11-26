@@ -445,9 +445,9 @@ axios.get(CORS_PROXY+'https://api.federalreporter.nih.gov/v1/Projects/search?que
         var output = response.data.items[i];
         if(output.otherPis != undefined){
             
-            generateAwards(output.projectStartDate,output.projectEndDate,output.contactPi,output.otherPis,output.title);
+        // generateAwards(output.projectStartDate,output.projectEndDate,output.contactPi,output.otherPis,output.title);
     }else{
-        generateAwards(output.projectStartDate,output.projectEndDate,output.contactPi,"",output.title);
+        // generateAwards(output.projectStartDate,output.projectEndDate,output.contactPi,"",output.title);
 
     }
     }

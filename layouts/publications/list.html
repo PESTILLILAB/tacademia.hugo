@@ -1,6 +1,6 @@
 <!doctype html>
 {{ partial "head.html" .}}
-  <body onload="pub_gen()">
+  <body>
 {{ partial "nav.html" .}}
 
 <!-- 
@@ -320,51 +320,33 @@
       <div class="container py-5">
   
           <!-- For demo purpose -->
-          <div class="row text-center mb-5">
-              <div class="col-lg-12 mx-auto">
-                  <h1>Publications</h1>
-                  </div>
-              </div><!-- End -->
-      
-      
-              <div class="row">
-                  <div class="col-lg-12 mx-auto">
-                      
-                      <!-- Timeline -->
-                      <ul class="timeline" id = "_publications" onscroll="Animate()" style="height:50vh;overflow:scroll">
-                          <!-- <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
-                              <div class="timeline-arrow"></div>
-                              <p><span class="orange-text">18 August, 2019</span></p>
-                              <h2 class="h5">Attention enhances contrast sensitivity at cued and impairs it at uncued locations</h2>
-                              <p>F Pestilli, M Carrasco</p>
-                          </li>
-                          <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
-                              <div class="timeline-arrow"></div>
-                              <p><span class="orange-text">18 August, 2019</span></p>
-                              <h2 class="h5">Attention enhances contrast sensitivity at cued and impairs it at uncued locations</h2>
-                              <p>F Pestilli, M Carrasco</p>
-                          </li>
-                          <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
-                              <div class="timeline-arrow"></div>
-                              <p><span class="orange-text">18 August, 2019</span></p>
-                              <h2 class="h5">Attention enhances contrast sensitivity at cued and impairs it at uncued locations</h2>
-                              <p>F Pestilli, M Carrasco</p>
-                          </li>
-                          <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
-                              <div class="timeline-arrow"></div>
-                              <p><span class="orange-text">18 August, 2019</span></p>
-                              <h2 class="h5">Attention enhances contrast sensitivity at cued and impairs it at uncued locations</h2>
-                              <p>F Pestilli, M Carrasco</p>
-                          </li> -->
-                      </ul><!-- End -->
-      
-                  </div>
+        <div class="row text-center mb-5">
+            <div class="col-lg-12 mx-auto">
+                <h1>Publications</h1>
+            </div>
+        </div><!-- End -->
+        <div class="row">
+            <div class="col-lg-12 mx-auto">         
+                <!-- Timeline -->
+                <ul class="timeline" id = "_publications" onscroll="Animate()" style="height:50vh;overflow:scroll">
+                {{with .Site.GetPage "/publications"}}
+                {{ range .Pages  }}
+                {{if isset .Params "doi"}}
+                <li class="timeline-item rounded ml-3 p-4" dt-date ={{.Params.publicationDate}} data-event-date={{.Params.publicationDate}} > 
+                    <div class="event_date blue-text">{{.Params.publicationDate}}</div>
+                    <h2 class="h5">{{.Params.title}}</h2>
+                    <p>{{delimit .Params.authors ", "}}</p>
+                    <p class="journal bold">{{.Params.journal}}<br><span>
+                        <span class="badge badge-pill badge-info">{{.Params.doi}}</span>
+                    </p>
+                </li>
+                  {{end}}
+                  {{end}}
+                  {{end}}
+                </ul><!-- End -->
               </div>
           </div>
-      
-      
-  
-  
+        </div>
         <!-- /END THE FEATURETTES -->
   
       <!-- /.container -->
