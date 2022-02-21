@@ -430,7 +430,8 @@ ul > li:nth-child(even) div.event_date {right: 0;}
             fetch('{{.Params.mapData}}').then(res=>res.json()).then(insts=>{
                 map = new google.maps.Map(document.getElementById("map"), {
                     center: { lat: 20, lng: 10 },
-                    zoom: 2 
+                    zoom: 2,
+                    disableDefaultUI: true,
                 });
                 for(let name in insts) {
                     if(insts[name].lat && insts[name].lng) {
