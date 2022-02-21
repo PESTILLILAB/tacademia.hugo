@@ -17,7 +17,10 @@
 </nav> -->
 <nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center">
     <!-- <a href="/" class="navbar-brand d-flex w-50 mr-auto">Navbar 3</a> -->
-    <a class="navbar-brand" href="/"><img id="logo" class="d-inline-block mr-1" alt="{{.Site.Params.logoNav}}" src="{{ .Site.BaseURL }}img/logo.svg"> <span class="logo-name">PESTILLI <span class="orange-text">LAB</span></span></a>
+    <a class="navbar-brand" href="/">
+        <img id="logo" class="d-inline-block mr-1" alt="{{.Site.Params.logoNav}}" src="{{ .Site.BaseURL }}img/logo.svg"> 
+        <span class="logo-name">{{.Site.Title }}</span>
+    </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
         <span class="navbar-toggler-icon"></span>
