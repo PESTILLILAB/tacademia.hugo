@@ -328,7 +328,7 @@
         <div class="row">
             <div class="col-lg-12 mx-auto">         
                 <!-- Timeline -->
-                <ul class="timeline" id = "_publications" onscroll="Animate()" style="height:50vh;overflow:scroll">
+                <ul class="timeline" id = "_publications" onscroll="Animate()" style="height:100vh;overflow:scroll">
                 {{with .Site.GetPage "/publications"}}
                 {{ range .Pages  }}
                 {{if isset .Params "doi"}}
