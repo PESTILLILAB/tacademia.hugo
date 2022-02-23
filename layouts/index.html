@@ -141,49 +141,15 @@
           {{end}}
     {{end}}
     <br/>
+
     {{ with .Site.GetPage "/home" }}
     {{range .Pages}}
-    {{if in .Params.tags "map"}}
+        {{if in .Params.tags "map"}}
+            {{ partial "map.html" . }}
+        {{end}}
+    {{end}}
+    {{end}}
 
-    <div style="background: {{.Params.backgroundColor}}">
-        <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col-lg-12 mx-auto">
-                    <h2 class="featurette-heading" style="color: {{.Params.titleColor}}">{{.Params.title}}</h2>
-                    <p style="color: {{.Params.subtitleColor}}">{{.Params.subtitle}}</p>
-                    <div id="map" style="height : {{.Params.height}}px; width: 100%"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-        var map;
-        function initMap() {
-            fetch('{{.Params.mapData}}').then(res=>res.json()).then(insts=>{
-                map = new google.maps.Map(document.getElementById("map"), {
-                    center: { lat: 20, lng: 10 },
-                    zoom: 2,
-                    disableDefaultUI: true
-                });
-                for(let name in insts) {
-                    console.log(name);
-                    if(insts[name].lat && insts[name].lng) {
-                      console.log(name,insts[name]);
-                        new google.maps.Marker({
-                            position: insts[name],
-                            map: map,
-                            title: name,
-                            //label: 'hi',
-                        });
-                    }
-                }
-            });
-        }
-    </script>
-    {{end}}
-    {{end}}
-    {{end}}
-    <br>
     {{ partial "footer.html" .}}
 
       <!-- <hr class="featurette-divider">
