@@ -161,7 +161,7 @@
                     },
                     map: map,
                     title: name,
-                    icon: image
+                    icon: image.url ? image : null
                 });
                 bounds.extend(
                     new google.maps.LatLng(
