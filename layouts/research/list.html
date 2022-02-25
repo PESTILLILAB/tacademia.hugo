@@ -410,49 +410,15 @@ ul > li:nth-child(even) div.event_date {right: 0;}
 
     {{ with .Site.GetPage "/research" }}
     {{range .Pages}}
-    {{if in .Params.tags "map"}}
-
-    <div style="background: {{.Params.backgroundColor}}">
-        <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col-lg-12 mx-auto">
-                    <h2 class="featurette-heading margin-paragraph-left" style="color: {{.Params.titleColor}}">{{.Params.title}}</h2>
-                    <p class="margin-paragraph-left" style="color: {{.Params.subtitleColor}}">{{.Params.subtitle}}</p>
-                    <div id="map" style="height : {{.Params.height}}px; width: {{.Params.width}}px"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-        var map;
-        function initMap() {
-            console.log("I am running");
-            fetch('{{.Params.mapData}}').then(res=>res.json()).then(insts=>{
-                map = new google.maps.Map(document.getElementById("map"), {
-                    center: { lat: 20, lng: 10 },
-                    zoom: 2,
-                    disableDefaultUI: true,
-                });
-                for(let name in insts) {
-                    if(insts[name].lat && insts[name].lng) {
-                        new google.maps.Marker({
-                            position: insts[name],
-                            map: map,
-                            title: name,
-                            //label: 'hi',
-                        });
-                    }
-                }
-            });
-        }
-    </script>
-    {{end}}
+        {{if in .Params.tags "map"}}
+            {{ partial "map.html" . }}
+        {{end}}
     {{end}}
     {{end}}
 
 
     </main>
-    <br>
+
     {{ partial "footer.html" .}}
     <!-- Optional JavaScript; choose one of the two! -->
 

@@ -1,0 +1,177 @@
+
+<div style="background: {{.Params.backgroundColor}}">
+    <div class="container">
+        <div class="row text-center mb-3">
+            <div class="col-lg-12 mx-auto">
+                <h2 class="featurette-heading margin-paragraph-left" style="color: {{.Params.titleColor}}">{{.Params.title}}</h2>
+                <p class="margin-paragraph-left" style="color: {{.Params.subtitleColor}}">{{.Params.subtitle}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="map-responsive" style="height: {{.Params.mapHeight}};">
+        <div id="map"></div>
+    </div>
+</div>
+<script>
+    const insts = {{ getJSON .Params.mapData }};
+
+    const colors = {
+        primary: "{{ .Params.mapPrimaryColor }}",
+        secondary: "{{ .Params.mapSecondaryColor }}",
+        water: "{{ .Params.mapWaterColor }}",
+    };
+
+    const mapStyle = [
+        {
+            "elementType": "geometry",
+            "stylers": [{ "color": colors.secondary }]
+        },
+        {
+            "featureType": "water",
+            "elementType": "geometry",
+            "stylers": [{ "color": colors.water }]
+        },
+        {
+            "featureType": "water",
+            "elementType": "labels",
+            "stylers": [{ "visibility": "off" }]
+        },
+        {
+            "elementType": "labels.icon",
+            "stylers": [{ "visibility": "off" }]
+        },
+        {
+            "elementType": "labels.text.fill",
+            "stylers": [{ "color": colors.primary }]
+        },
+        {
+            "elementType": "labels.text.stroke",
+            "stylers": [{ "color": colors.secondary }]
+        },
+        {
+            "featureType": "administrative",
+            "elementType": "geometry",
+            "stylers": [{ "color": colors.primary }]
+        },
+        {
+            "featureType": "administrative.country",
+            "elementType": "labels.text.fill",
+            "stylers": [{ "color": colors.primary }]
+        },
+        {
+            "featureType": "administrative.land_parcel",
+            "stylers": [{ "visibility": "off" }]
+        },
+        {
+            "featureType": "administrative.locality",
+            "elementType": "labels.text.fill",
+            "stylers": [{ "color": colors.primary }]
+        },
+        {
+            "featureType": "administrative.neighborhood",
+            "stylers": [{ "visibility": "off" }]
+        },
+        {
+            "featureType": "poi",
+            "stylers": [{ "visibility": "off" }]
+        },
+        {
+            "featureType": "poi",
+            "elementType": "labels.text.fill",
+            "stylers": [{ "color": colors.primary }]
+        },
+        {
+            "featureType": "poi.park",
+            "elementType": "geometry",
+            "stylers": [{ "color": colors.primary }]
+        },
+        {
+            "featureType": "poi.park",
+            "elementType": "labels",
+            "stylers": [{ "visibility": "off" }]
+        },
+        {
+            "featureType": "road",
+            "elementType": "geometry.fill",
+            "stylers": [{ "color": colors.primary }]
+        },
+        {
+            "featureType": "road",
+            "elementType": "labels",
+            "stylers": [{ "visibility": "off" }]
+        },
+        {
+            "featureType": "road",
+            "elementType": "labels.icon",
+            "stylers": [{ "visibility": "off" }]
+        },
+        {
+            "featureType": "road",
+            "elementType": "labels",
+            "stylers": [{ "visibility": "off" }]
+        },
+        {
+            "featureType": "road.arterial",
+            "stylers": [{ "visibility": "off" }]
+        },
+        {
+            "featureType": "road.arterial",
+            "elementType": "geometry",
+            "stylers": [{ "color": colors.primary }]
+        },
+        {
+            "featureType": "road.highway",
+            "elementType": "geometry",
+            "stylers": [{ "color": colors.primary }]
+        },
+        {
+            "featureType": "road.highway",
+            "elementType": "labels",
+            "stylers": [{ "visibility": "off" }]
+        },
+        {
+            "featureType": "road.local",
+            "stylers": [{ "visibility": "off" }]
+        },
+        {
+            "featureType": "transit",
+            "stylers": [{ "visibility": "off" }]
+        }
+    ];
+
+
+    let map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 1,
+            disableDefaultUI: true,
+        });
+        const bounds = new google.maps.LatLngBounds();
+        const image = {
+            url: "{{ .Params.mapMarker }}",
+            anchor: new google.maps.Point(25, 50),
+            scaledSize: new google.maps.Size(50, 50)
+        };
+        for (let name in insts) {
+            if (insts[name].lat && insts[name].lng) {
+                const marker = new google.maps.Marker({
+                    position: {
+                        lat: insts[name].lat,
+                        lng: insts[name].lng
+                    },
+                    map: map,
+                    title: name,
+                    icon: image.url ? image : null
+                });
+                bounds.extend(
+                    new google.maps.LatLng(
+                        insts[name].lat,
+                        insts[name].lng
+                    )
+                );
+            }
+        }
+        map.fitBounds(bounds);
+        map.setOptions({ styles: mapStyle });
+    }
+</script>
