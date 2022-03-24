@@ -1,0 +1,624 @@
+<style>
+.wrapper{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wrapper .wrapper__video{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.featurette-video {
+    width : 100%;
+    height : 100%;
+}
+img#logo{ width:60px; }
+.navbar-light .navbar-nav .nav-link {
+    color:{{.Site.Params.sitecolors.headingColor}};
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Source Sans Pro', sans-serif !important;
+  color:{{.Site.Params.sitecolors.headingColor}};
+  font-weight: bold;
+}
+p,li {
+    font-family: 'Source Sans Pro', sans-serif , Helvetica, Arial !important;
+    color: #373D3F;
+}
+.nav-item {
+    padding : 5px;
+}
+.featurette-heading {
+    color : {{.Site.Params.sitecolors.headingColor}} !important;
+}
+footer p a{
+    color: #373D3F !important;
+}
+.carousel-item {
+    height: 550px;
+}
+.carousel-item  >img {
+width:100%;
+height: 100%;
+object-fit: cover;
+background: no-repeat center center fixed;
+}
+
+.semi-bold {
+    font-weight: 600 !important;
+    color: #646464 !important;
+}
+.linespace{
+    line-height: 1.4;
+}
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #ffffff ;
+}
+.carousel-indicators .active{
+    background-color: #F9C926 !important;
+}
+body {
+    font-family: 'Source Sans Pro', sans-serif , Helvetica, Arial;
+}
+/* 
+p{
+    color: #646464 !important;
+} */
+
+#homepage-section-1>.col-lg-4:hover {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  }
+  #homepage-section-1>.col-lg-4>img:hover {
+  animation: draw 3s linear forwards !important;
+  }
+.margin-50px {
+    margin-top: 50px;
+}
+.caption-team {
+    font-size: smaller;
+}
+.margin-5px{
+  margin-top :5px !important;
+}
+.badge-info {
+  background-color:  {{.Site.Params.sitecolors.btnColor}}; 
+}
+.btn{
+    background-color: {{.Site.Params.sitecolors.btnColor}};
+    border-color:  {{.Site.Params.sitecolors.btnColor}};
+    color:white;
+}
+.btn:hover {
+    background-color:  {{.Site.Params.sitecolors.btnColor}}; 
+    border-color: {{.Site.Params.sitecolors.btnColor}};
+    /* Green */
+    color: white;
+  }
+  
+.carousel-caption {
+    transform: translateY(-50%);
+    bottom: 0;
+    top: 50%;
+    
+}
+.icons{
+  color : {{.Site.Params.sitecolors.iconColor}}
+}
+.rect {
+  height: auto;
+  width: auto;
+  color: white;
+  display: flex;
+  border-radius: 2px;
+  justify-content: center;
+  align-items: center;
+  background-color: {{.Site.Params.sitecolors.headingColor}} ;
+  }
+  .rect > h1 {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: auto;
+    padding-bottom: auto;
+  }
+  .text-gray {
+    color: #999;
+}
+
+/* 
+  Thin            100     
+Extra Light     200
+Light           300
+Regular         400
+Medium          500
+Semi-Bold       600
+Bold            700
+Extra-Bold      800
+Black           900
+*/
+.bold{
+  font-weight: 700 !important;
+}
+
+.semi-bold{
+  font-weight: 600;
+}
+
+.journal {
+  color : {{.Site.Params.sitecolors.headingColor}} !important;
+}
+.orange-text{
+    color: #F8971F !important;
+}
+.active{
+    background-color: #F9C926 !important;
+    color: #373737 !important;
+}
+.nav-link.active:hover {
+  background-color: #FDE755 !important;
+}
+.nav-link:hover {
+  background-color: #FDE755 !important;
+}
+.nav-item> a {
+    font-weight: 600;
+    color: #373737;
+}
+.logo-name{
+    font-weight: 700;
+    font-size: 24px;
+    margin-top: 2px;
+}
+
+#content-category{
+    margin-top: 50px;
+}
+.position-team {
+   color:  #373737 !important;
+   font-size: small;
+   margin-bottom: 5px;
+}
+.teamImage{
+    object-fit: cover;
+}
+.image-center-div {
+    display:table-cell; vertical-align:middle; text-align:center;
+}
+.carousel-item:after {
+    content:"";
+    display:block;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(0, 0, 0, 0.43);
+  }
+/* .marketing {
+    width: 100%;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    margin-right: auto !important;
+    margin-left: auto !important; */
+
+/* .col-sm > img {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+} */
+
+/* Carousel base class */
+.carousel {
+    margin-bottom: 4rem;
+  }
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+  }
+  
+  /* Declare heights because of positioning of img element */
+  .carousel-item {
+    height: 32rem;
+    background-color: #777;
+  }
+  .carousel-item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
+  }
+  
+  .font-bold {
+      font-weight: 700 !important;
+      color: #373737;
+  }
+  /* MARKETING CONTENT
+  -------------------------------------------------- */
+  
+  /* Center align the text within the three columns below the carousel */
+  .marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .marketing h2 {
+    font-weight: 400;
+  }
+  .marketing .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+  }
+  
+  /* Featurettes
+  ------------------------- */
+  
+  .featurette-divider {
+    margin: 2.5rem 0; /* Space out the Bootstrap <hr> more */
+  }
+
+  .black-text {
+      color : #000000 !important;
+      margin-top: 20px;
+      letter-spacing: 2px;
+      font-size: 12px;
+  }
+.margin-paragraph-left{
+    margin-top: 10px !important;
+    margin-right: 80px !important;
+  }
+  .margin-paragraph-right{
+    margin-top: 20px !important;
+    margin-left: 100px !important;
+  }
+  /* Thin out the marketing headings */
+  .featurette-heading {
+    font-weight: 700 !important;
+    font-family: 'Open Sans';
+    line-height: 1;
+  }
+  
+  /* RESPONSIVE CSS
+  -------------------------------------------------- */
+  
+  @media (min-width: 40em) {
+    /* Bump up size of carousel content */
+    .carousel-caption p {
+      margin-bottom: 1.25rem;
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+  
+    .featurette-heading {
+      font-size: 50px;
+    }
+  }
+  
+  @media (min-width: 62em) {
+    .featurette-heading {
+      margin-top: 7rem;
+    }
+  }
+  
+.map-responsive {
+    overflow: hidden;
+    height: 50vh;
+    position: relative;
+}
+
+.map-responsive > div {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}    
+
+
+/* Timeline CSS*/
+   
+.timeline {
+    position: relative;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 15px 0;
+  }
+  
+  .timeline::after {
+    content: '';
+    height: var(--barHeight);
+    position: absolute;
+    width: 4px;
+    background: #006E51;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+  }
+  
+  .timeline-item {
+    padding: 15px 30px;
+    position: relative;
+    background: inherit;
+    width: 50%;
+  }
+  
+  .timeline-item {
+    left: 0;
+  }
+  
+  .timeline-item.right {
+    left: 50%;
+  }
+  
+   
+  
+  .timeline-item.right::after {
+    left: -26px;  }
+ 
+  
+  .timeline-item.right::before {
+    left: 8px;
+  }
+  .timeline-item .date {
+    position: absolute;
+    display: inline-block;
+    top: calc(50% - 8px);
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #006E51;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1;
+  }
+  
+  .timeline-item .date {
+    right: -75px;
+  }
+  
+  .timeline-item.right .date {
+    left: -75px;
+  }
+  
+  .timeline-item .icon {
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    padding: 9px 0;
+    top: calc(50% - 20px);
+    background: #005981 !important;
+    border: 2px solid #005981;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 18px;
+    color: #005981;
+    z-index: 1;
+  }
+  
+  .timeline-item .icon {
+    right: 56px;
+  }
+  
+  .timeline-item.right .icon {
+    left: 56px;
+  }
+  
+  .timeline-item .content {
+    padding: 30px 90px 30px 30px;
+    background: #005981;
+    position: relative;
+    border-radius: 0 500px 500px 0;
+  }
+  
+  .timeline-item.right .content {
+    padding: 30px 30px 30px 90px;
+    border-radius: 500px 0 0 500px;
+  }
+  
+  .timeline-item .content h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: normal;
+    color: #005981;
+  }
+  
+  .timeline-item .content p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+  }
+  
+  @media (max-width: 767.98px) {
+    .timeline::after {
+      left: 90px;
+    }
+  
+    .timeline-item {
+      width: 100%;
+      padding-left: 120px;
+      padding-right: 30px;
+    }
+  
+    .timeline-item.right {
+      left: 0%;
+    }
+  
+    .timeline-item::after, 
+    .timeline-item.right::after {
+      left: 82px;
+    }
+  
+    .timeline-item::before,
+    .timeline-item.right::before {
+      left: 100px;
+      border-color: transparent #006E51 transparent transparent;
+    }
+  
+    .timeline-item .date,
+    .timeline-item.right .date {
+      right: auto;
+      left: 15px;
+    }
+  
+    .timeline-item .icon,
+    .timeline-item.right .icon {
+      right: auto;
+      left: 146px;
+    }
+  
+    .timeline-item .content,
+    .timeline-item.right .content {
+      padding: 30px 30px 30px 90px;
+      border-radius: 500px 0 0 500px;
+    }
+  }
+
+  ul li::marker {
+    font-size: 150%;
+    background: #ffffff;
+    border: 2px solid #006E51;
+    border-radius: 16px;
+  }
+.blue-text{
+    color: #2693ff !important;
+}
+
+.p-4 {
+    padding: 1.5rem!important;
+}
+
+
+ 
+.ml-3,
+.mx-3 {
+  margin-left: 1rem !important;
+}
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+#_awards p {
+  margin-top: -2px;
+}
+.bg-white {
+  background-color: #fff !important;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 6px;
+  background-color: white;
+  border: 3px solid #005981;
+  top: 25px;
+  border-radius: 50%;
+  z-index: 1;
+}
+ul {list-style:none;
+}
+.remove-space{
+  display: none; 
+}
+
+.li::before{
+  content: attr(dt-date);
+  color: black;
+}
+
+.event_date{
+  position: absolute;
+}
+
+.rect-bg{
+ background-color: #005981!important ; 
+ padding : 3px 5px;
+ color:white;
+}
+
+ul > li:nth-child(odd) div.event_date {left: -8em;}
+ul > li:nth-child(even) div.event_date {right:-6em;}
+@media only screen and (max-width: 540px) {
+
+  ul > li:nth-child(odd) div.event_date {left: 0;}
+ul > li:nth-child(even) div.event_date {right: 0;}
+.timeline-item::after, .timeline-item.right::after {
+   left: -26px;
+;
+}
+.event_date{
+  position: relative;
+  margin-top: -1em !important;
+}
+.timeline::after {
+    left: 0;
+}
+.h5,p{
+  margin-top: 0 !important
+}
+}
+
+.topbanner:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: -webkit-linear-gradient(0deg, #F8971F  15%, #4d4bd0 97%);
+    background-image: -moz-linear-gradient(0deg, #F8971F  15%, #4d4bd0 97%);
+    background-image: -ms-linear-gradient(0deg, #F8971F  15%, #4d4bd0 97%);
+    background-image: -o-linear-gradient(0deg, #F8971F  15%, #4d4bd0 97%);
+    background-image: linear-gradient(90deg, #F8971F  15%, #4d4bd0 97%);
+    opacity: 0.9;
+}
+.topbanner{
+  /* background-image: linear-gradient(90deg, #f0754f 15%, #4d4bd0 97%); */
+  /* background-image: url(https://PESTILLILAB.github.io/img/cloud-engineers-science-in-hd-iPrjQEDnNEY-unsplash.jpeg); */
+  opacity: 1.0;
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  position: relative;
+  text-shadow: 0 0 0.25rem rgb(0 0 0 / 15%);
+}
+.topbanner .row {
+  padding: 4em 0;
+  max-width: 1280px;
+}
+.timeline h5 {
+  color : #476E80 !important
+}
+.timeline p {
+  color: #476E80;
+  font-weight: 600;
+  font-size: large;
+
+}
+
+/*FOOTER*/
+
+</style>

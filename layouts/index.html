@@ -1,119 +1,63 @@
 <!DOCTYPE html>
 {{ partial "head.html" . }}
 {{ partial "nav.html" .}}
-<!-- <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-    <a class="navbar-brand" href="#"><img id="logo" class="d-inline-block mr-1" alt="Logo" src="img/logo.svg"> <span class="logo-name">PESTILLI <span class="orange-text">LAB</span></span></a>
-    <ul class="nav justify-content-end nav-pills">
-       <li class="nav-item">
-         <a class="nav-link active" href="{{ .Site.BaseURL }}">HOME</a>
-       </li>
-       <li class="nav-item">
-         <a class="nav-link" href="{{ .Site.BaseURL }}research">RESEARCH</a>
-       </li>
-       <li class="nav-item">
-         <a class="nav-link" href="{{ .Site.BaseURL }}publications">PUBLICATIONS</a>
-       </li>
-       <li class="nav-item">
-           <a class="nav-link" href="{{ .Site.BaseURL }}team">TEAM</a>
-       </li>
-     </ul>
-</nav> -->
-<style>
-.videoWrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  /* 16:9 */
-  padding-top: 25px;
-  height: 0;
-}
-.videoWrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 
-.featurette-video {
-    width : 100%;
-    height : 100%;
-}
-</style>
+<div class="wrapper">
+  <video autoplay loop muted class="wrapper__video">
+     <!-- <source src="//vimeo-hp-videos.global.ssl.fastly.net/3/3.mp4"> -->
+     <source src="videos/pexels-tima-miroshnichenko-6010752.mp4">
+  </video>  
+</div>
 <main role="main">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="3000">
-            <div class="carousel-inner">
-                {{ with .Site.GetPage "/home" }}
-                    {{range .Pages}}
-                        {{if in .Params.tags "slider"}}
-                            {{if in .Params.tags "active"}}
-                            <div class="carousel-item active" style="height:100vh">
-                                <img class="d-block w-100" src="{{.Params.image}}" style="height:100vh" alt="First slide">
-                                <div class="carousel-caption {{.Params.align}} ">
-                                    <div class="rect float-right"><h1>{{.Params.title}}</h1></div>
-                                    <!-- <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
-                                </div>
-                            </div>
-                            {{else}}
-                        <div class="carousel-item" style="height:100vh">
-                            <img class="d-block w-100" src="{{.Params.image}}" style="height:100vh" alt="First slide">
-                            <div class="carousel-caption {{.Params.align}} ">
-                                <div class="rect float-right"><h1>{{.Params.title}}</h1></div>
-                                <!-- <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
-                            </div>
-                        </div>
-                        {{end}}
-                        {{ end }}
-                    {{end}}
-                {{end}}
-            </div>
-        </div>
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row" id='homepage-section-1'>
-        {{ with .Site.GetPage "/home" }}
-                    {{range .Pages}}
-                        {{if in .Params.tags "infobox"}}
-                        <div class="col-lg-4 animate__animated animate__bounce">
-                            <img class = 'margin-50px'  src="{{.Params.image}}" alt="Generic placeholder image" width="140" height="140">
-                            <h2  class="font-bold">{{.Params.Title}}</h2>
-                            <p>{{.Params.description}}</p>
-                            <p><a class="btn shadow-sm btn-secondary" href="{{.Params.url}}" role="button">Learn More</a></p>
-                        </div> <!-- /.col-lg-4 -->
-                        {{ end }}
-                    {{end}}
-                {{end}}
-      </div><!-- /.row -->
-    </div>
       <!-- START THE FEATURETTES -->     
     {{ with .Site.GetPage "/home" }}
           {{range .Pages}}
           {{if in .Params.tags "feature"}}
-<br>
+    <br>
     <div style="background: {{.Params.backgroundColor}}">
         <div class="container">
             <br>
             <br>
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading margin-paragraph-left" style="color: {{.Params.titleColor}}">{{.Params.title}}</h2>
-          <p style="color: {{.Params.subtitleColor}}">{{.Params.subtitle}}</p>
-          <p style="color: {{.Params.textColor}}">{{.Content}} </p>
+      {{ if eq .Params.align "right"}}
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading margin-paragraph-left" style="color: {{.Params.titleColor}}">{{.Params.title}}</h2>
+            <p style="color: {{.Params.subtitleColor}};font-weight: 600;">{{.Params.subtitle}}</p>
+            <p style="color: {{.Params.textColor}}; font-weight: 600;">{{.Content}} </p>
+          </div>
+          <div class="col-md-5">
+              {{if isset .Params "image"}}
+                  <img class="featurette-image img-fluid mx-auto" src=" {{.Params.image}} " alt="Generic placeholder image">
+              {{else}}
+                  <iframe class="featurette-video" height="auto" width ="auto" src="{{.Params.youtubeUrl}}"></iframe>
+              {{end}}
+          </div>
         </div>
+      </div>
+      </div>
+    {{else}}
+      <div class="row featurette">
         <div class="col-md-5">
-            {{if isset .Params "image"}}
+          {{if isset .Params "image"}}
                 <img class="featurette-image img-fluid mx-auto" src=" {{.Params.image}} " alt="Generic placeholder image">
             {{else}}
                 <iframe class="featurette-video" height="auto" width ="auto" src="{{.Params.youtubeUrl}}"></iframe>
             {{end}}
+         
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading margin-paragraph-left" style="color: {{.Params.titleColor}}">{{.Params.title}}</h2>
+          <p style="color: {{.Params.subtitleColor}};font-weight: 600;">{{.Params.subtitle}}</p>
+          <p style="color: {{.Params.textColor}}; font-weight: 600;">{{.Content}} </p>
         </div>
       </div>
     </div>
     </div>
+    {{end}}
             {{end}}
           {{end}}
  
@@ -128,8 +72,8 @@
         <div class="container">
             <div class="row text-center mb-5">
                 <div class="col-lg-12 mx-auto">
-                    <h2 class="featurette-heading margin-paragraph-left" style="color: {{.Params.titleColor}}">{{.Params.title}}</h2>
-                    <p class="margin-paragraph-left" style="color: {{.Params.subtitleColor}}">{{.Params.subtitle}}</p>
+                    <h2 class="featurette-heading" style="color: {{.Params.titleColor}}">{{.Params.title}}</h2>
+                    <p style="color: {{.Params.subtitleColor}};font-weight: 600;">{{.Params.subtitle}}</p>
                     <div class="videoWrapper">    
                         <iframe height="1000" width ="1000" src="{{.Params.youtubeUrl}}"></iframe>
                     </div>
@@ -140,8 +84,7 @@
             {{end}}
           {{end}}
     {{end}}
-    <br/>
-
+</main>
     {{ with .Site.GetPage "/home" }}
     {{range .Pages}}
         {{if in .Params.tags "map"}}
@@ -149,7 +92,6 @@
         {{end}}
     {{end}}
     {{end}}
-
     {{ partial "footer.html" .}}
 
       <!-- <hr class="featurette-divider">
