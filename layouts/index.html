@@ -15,52 +15,7 @@
 
       <!-- START THE FEATURETTES -->     
     {{ with .Site.GetPage "/home" }}
-          {{range .Pages}}
-          {{if in .Params.tags "feature"}}
-    <br>
-    <div style="background: {{.Params.backgroundColor}}">
-        <div class="container">
-            <br>
-            <br>
-      {{ if eq .Params.align "right"}}
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading margin-paragraph-left" style="color: {{.Params.titleColor}}">{{.Params.title}}</h2>
-            <p style="color: {{.Params.subtitleColor}};font-weight: 600;">{{.Params.subtitle}}</p>
-            <p style="color: {{.Params.textColor}}; font-weight: 600;">{{.Content}} </p>
-          </div>
-          <div class="col-md-5">
-              {{if isset .Params "image"}}
-                  <img class="featurette-image img-fluid mx-auto" src=" {{.Params.image}} " alt="Generic placeholder image">
-              {{else}}
-                  <iframe class="featurette-video" height="auto" width ="auto" src="{{.Params.youtubeUrl}}"></iframe>
-              {{end}}
-          </div>
-        </div>
-      </div>
-      </div>
-    {{else}}
-      <div class="row featurette">
-        <div class="col-md-5">
-          {{if isset .Params "image"}}
-                <img class="featurette-image img-fluid mx-auto" src=" {{.Params.image}} " alt="Generic placeholder image">
-            {{else}}
-                <iframe class="featurette-video" height="auto" width ="auto" src="{{.Params.youtubeUrl}}"></iframe>
-            {{end}}
-         
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading margin-paragraph-left" style="color: {{.Params.titleColor}}">{{.Params.title}}</h2>
-          <p style="color: {{.Params.subtitleColor}};font-weight: 600;">{{.Params.subtitle}}</p>
-          <p style="color: {{.Params.textColor}}; font-weight: 600;">{{.Content}} </p>
-        </div>
-      </div>
-    </div>
-    </div>
-    {{end}}
-            {{end}}
-          {{end}}
- 
+      {{ partial "featurette.html" .}}
     {{end}}
 
     <br/>
@@ -93,39 +48,6 @@
     {{end}}
     {{end}}
     {{ partial "footer.html" .}}
-
-      <!-- <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading margin-paragraph-left">Hero Header</h2>
-          <p class="black-text">AMAZING SUB HEADER FOR THE HERO HEADER</p>
-          <p class="margin-paragraph-left">Tiramisu gummies chocolate bar pie cake pastry. Sweet muffin sugar plum pastry wafer lemon drops biscuit topping carrot cake. Muffin apple pie candy canes gingerbread halvah halvah. Toffee toffee powder powder candy canes. Wafer danish donut gingerbread carrot cake marshmallow tart. Apple pie jelly beans chocolate cake. Liquorice muffin brownie jujubes gingerbread dragée donut. Marshmallow pudding chupa chups. Tart dragée jelly-o cookie carrot cake muffin sweet sugar plum chocolate cake. Lemon drops marzipan dessert. Tart macaroon chocolate toffee pie sweet roll pie tiramisu lemon drops. Croissant muffin gingerbread. Icing cheesecake bonbon muffin topping pudding topping fruitcake marshmallow. </p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-fluid mx-auto"src="img/500x500.svg" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading margin-paragraph-right ">Hero Header</h2>
-            <p class="black-text margin-paragraph-right ">AMAZING SUB HEADER FOR THE HERO HEADER</p>
-            <p class="margin-paragraph-right">Tiramisu gummies chocolate bar pie cake pastry. Sweet muffin sugar plum pastry wafer lemon drops biscuit topping carrot cake. Muffin apple pie candy canes gingerbread halvah halvah. Toffee toffee powder powder candy canes. Wafer danish donut gingerbread carrot cake marshmallow tart. Apple pie jelly beans chocolate cake. Liquorice muffin brownie jujubes gingerbread dragée donut. Marshmallow pudding chupa chups. Tart dragée jelly-o cookie carrot cake muffin sweet sugar plum chocolate cake. Lemon drops marzipan dessert. Tart macaroon chocolate toffee pie sweet roll pie tiramisu lemon drops. Croissant muffin gingerbread. Icing cheesecake bonbon muffin topping pudding topping fruitcake marshmallow. </p>
-           </div>
-        <div class="col-md-5 order-md-1">
-          <img class="featurette-image img-fluid mx-auto" src="img/500x500.svg" alt="Generic placeholder image">
-        </div>
-      </div>
-
-
-      <hr class="featurette-divider"> -->
-
-
-
-      <!-- /END THE FEATURETTES -->
 
     <!-- Optional JavaScript; choose one of the two! -->
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
