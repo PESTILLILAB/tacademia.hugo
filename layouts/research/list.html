@@ -40,14 +40,14 @@
         </div><!-- End -->
         <div class="row">
             <div class="col-lg-12 mx-auto">
-              <ul class="timeline" id = "_awards" style="height:100vh; overflow-y: scroll; overflow-x: hidden;">
+              <ul class="timeline" id = "_awards" data-aos="fade-up" style="height:100vh; overflow-y: scroll; overflow-x: hidden;">
                 {{ range .Pages  }}
                 {{if isset .Params "agency"}}
                 <li class="timeline-item bg-white rounded ml-3 p-4" dt-date = {{.Params.startDate}} data-event-date= "{{.Params.startDate}} ">
                   <div class="event_date blue-text">
                     {{.Params.startDate}}
                   </div>
-                  <h4 style="margin-bottom:0.25rem">{{.Title}}</h2>
+                  <h4 style="margin-bottom:0.25rem ">{{.Title}}</h2>
                   <p style="margin-bottom:0.25rem">{{.Params.piFirstName}} {{.Params.piLastName}} {{if .Params.coPDPI}} , {{delimit .Params.coPDPI ", "}} {{ end }}</p>
                   {{if .Params.external_url}}
                   <a href="{{.Params.external_url}}" class="btn btn-gray">More</a>

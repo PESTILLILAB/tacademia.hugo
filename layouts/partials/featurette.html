@@ -5,7 +5,7 @@
   <br>
   <br>
 {{ if eq .Params.align "right"}}
-<div class="row featurette">
+<div class="row featurette" data-aos="fade-left">
 <div class="col-md-7">
   <h2 class="featurette-heading margin-paragraph-left" style="color: {{.Params.titleColor}}">{{.Params.title}}</h2>
   <p style="color: {{.Params.subtitleColor}};font-weight: 600;">{{.Params.subtitle}}</p>
@@ -22,7 +22,7 @@
 </div>
 </div>
 {{else}}
-<div class="row featurette">
+<div class="row featurette" data-aos="fade-right">
 <div class="col-md-5">
 {{if isset .Params "image"}}
       <img class="featurette-image img-fluid mx-auto" src=" {{.Params.image}} " alt="Generic placeholder image">
