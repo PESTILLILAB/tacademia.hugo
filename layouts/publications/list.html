@@ -14,22 +14,16 @@
       {{end}}
       
           <br>
-
-          <!-- For demo purpose -->
-        <div class="row text-center mb-5">
-            <div class="col-lg-12 mx-auto">
-                <h1>Publications</h1>
-            </div>
-        </div><!-- End -->
       
         <div class="row">
           <div class="col-lg-12 mx-auto">  
             <ul class="timeline" id = "_publications">
             {{with .Site.GetPage "/publications"}}
                 {{ range $i,$p := sort .Pages ".Params.publicationDate" "desc"}}
-                  {{if not (modBool $i 2)}}
+                {{ if isset .Params "authors" }}
+                {{if not (modBool $i 2)}}
                     <!-- Odd content -->
-                    <li class="timeline-item rounded ml-3 p-4 left" dt-date ={{.Params.publicationDate}} data-event-date={{.Params.publicationDate}} > 
+                    <li class="timeline-item rounded ml-3 p-4 left"  > 
                       {{ if ne .Params.publicationDate nil }}
                         <div class="event_date blue-text">{{ dateFormat "Jan, 2006" .Params.publicationDate }}</div>
                       {{end}}
@@ -47,7 +41,7 @@
                       {{end}}
                     </li>
                   {{else}}
-                  <li class="timeline-item rounded ml-3 p-4 right" dt-date ={{.Params.publicationDate}} data-event-date={{.Params.publicationDate}} > 
+                  <li class="timeline-item rounded ml-3 p-4 right"> 
                     {{ if ne .Params.publicationDate nil }}
                       <div class="event_date blue-text">{{ dateFormat "Jan, 2006" .Params.publicationDate }}</div>
                     {{end}}
@@ -66,7 +60,8 @@
                   </li>
                   {{end}}
                   {{end}}
-                {{end}}
+                  {{end}}
+                  {{end}}
             </ul>
           </div>
         </div>

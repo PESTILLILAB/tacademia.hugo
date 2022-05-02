@@ -40,8 +40,36 @@
         </div><!-- End -->
         <div class="row">
             <div class="col-lg-12 mx-auto">
-              <ul class="timeline" id = "_awards" style="height:100vh; overflow-y: scroll; overflow-x: hidden;">
-                {{ range .Pages  }}
+              <ul class="timeline" id = "_awards" data-aos="fade-up">
+                {{with .Site.GetPage "/research"}}
+                {{ range $i,$p := sort .Pages ".Params.startDate" "desc"}}
+                {{ if ne .Params.startDate nil}}
+                <!-- {{ warnf "%#v" .Params }} -->
+                {{if not (modBool $i 2)}}
+                  <li class="timeline-item rounded ml-3 p-4 right">
+                    {{ if ne .Params.startDate nil }}
+                      <div class="event_date blue-text">{{ dateFormat "Jan, 2006" .Params.startDate }}</div>
+                    {{end}}
+                      <h4 data-aos="fade-left" style="margin-bottom:0.25rem ">{{.Title}}</h2>
+                      <p style="margin-bottom:0.25rem">{{.Params.piFirstName}} {{.Params.piLastName}} {{if .Params.coPDPI}} , {{delimit .Params.coPDPI ", "}} {{ end }}</p>
+                      {{if .Params.external_url}}
+                      <a href="{{.Params.external_url}}" class="btn btn-gray">More</a>
+                      {{end}}
+                  </li>
+                {{else}}
+                  <li class="timeline-item rounded ml-3 p-4 left">
+                    <div class="event_date blue-text">{{ dateFormat "Jan, 2006" .Params.startDate }}</div>
+                    <h4 data-aos="fade-right" style="margin-bottom:0.25rem ">{{.Title}}</h2>
+                      <p style="margin-bottom:0.25rem">{{.Params.piFirstName}} {{.Params.piLastName}} {{if .Params.coPDPI}} , {{delimit .Params.coPDPI ", "}} {{ end }}</p>
+                      {{if .Params.external_url}}
+                      <a href="{{.Params.external_url}}" class="btn btn-gray">More</a>
+                      {{end}}
+                  </li>
+                {{end}}
+                {{end}}
+                {{end}}
+                {{end}}                  
+                <!-- {{ range .Pages  }}
                 {{if isset .Params "agency"}}
                 <li class="timeline-item bg-white rounded ml-3 p-4" dt-date = {{.Params.startDate}} data-event-date= "{{.Params.startDate}} ">
                   <div class="event_date blue-text">
@@ -54,7 +82,7 @@
                 </li>
                   {{end}}
                   {{end}}
-                  {{end}}
+                  {{end}} -->
               </ul>
         </div>
 
@@ -83,50 +111,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="{{ .Site.BaseURL }}js/parser.js"></script>
     <script src='{{ .Site.BaseURL }}js/lab.js'> </script>
-    <script>
-      
-      var ready = (callback) => {
-  if (document.readyState != "loading") callback();
-  else document.addEventListener("DOMContentLoaded", callback);
-}
-      ready(() => { 
-  /* Do things after DOM has fully loaded */ 
-
-
-    var container = document.querySelector(".timeline");;
-    var items = document.querySelectorAll('.timeline-item');
-    // https://stackoverflow.com/questions/21032481/change-the-style-of-before-and-after-pseudo-elements
-    let heightTimelineBar = document.getElementById('_awards').scrollHeight;
-    container.style.setProperty("--barHeight", heightTimelineBar+"px");
-    
-    items.forEach(
-      item=> {
-        let BCDATE = item.getAttribute("dt-date");
-        var standardDate = new Date(BCDATE).getTime();
-        item.setAttribute("data-event-date", standardDate);
-       }
-    )
-
-    var ab = 0;
-    Array.from(items).sort( function(a,b){
-        a = parseFloat(a.getAttribute("data-event-date"));
-        b = parseFloat(b.getAttribute("data-event-date"));
-        return a>b ? -1 : a<b ? 1 : 0;
-    }).forEach(list =>{
-      if(ab %2 == 0){
-        ab+=1;
-        list.classList.add("right");
-        container.append(list);
-      }else{
-        ab+=1;
-        list.classList.add("left");
-        container.append(list);
-      }
-    });
-
-});
-
-    </script>
     <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
